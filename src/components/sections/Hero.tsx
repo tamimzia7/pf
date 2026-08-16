@@ -1,5 +1,4 @@
 import React from 'react'
-import * as lucide from 'lucide-react'
 import { profile } from '@/data/profile'
 import { socialLinks } from '@/data/links'
 
@@ -43,8 +42,8 @@ export const Hero: React.FC = () => {
 
             {/* Social Links */}
             <div className="flex flex-wrap gap-4">
-              {socialLinks.map((link: { platform: string; url: string }) => {
-                const Icon = (lucide as any)[link.platform.toLowerCase()] || lucide.Github
+              {socialLinks.map((link) => {
+                const Icon = link.icon
                 return (
                   <a
                     key={link.platform}
@@ -53,7 +52,7 @@ export const Hero: React.FC = () => {
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 text-secondary-text hover:text-primary transition-colors"
                   >
-                    <Icon className="h-4 w-4" />
+                    <Icon className="h-4 w-4" aria-hidden="true" />
                     <span>{link.platform}</span>
                   </a>
                 )

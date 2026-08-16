@@ -1,10 +1,13 @@
 import React from 'react'
-import * as lucide from 'lucide-react'
 import { socialLinks, navigationLinks, hireMeText } from '@/data/links'
 
-export const Sidebar: React.FC = () => {
+interface SidebarProps {
+  activeId?: string | null
+}
+
+export const Sidebar: React.FC<SidebarProps> = ({ activeId }) => {
   return (
-    <aside className="lg:block lg:fixed lg:left-0 lg:top-0 lg:h-screen lg:w-64 lg:border-r">
+    <aside className="lg:block lg:fixed lg:left-0 lg:top-0 lg:h-screen lg:w-64 lg:border-r lg:border-border">
       <div className="p-6 lg:p-8">
         {/* Profile */}
         <div className="mb-8">
@@ -24,7 +27,7 @@ export const Sidebar: React.FC = () => {
         {/* Social Links */}
         <div className="mb-8 flex flex-col gap-2">
           {socialLinks.map((link) => {
-            const Icon = (lucide as any)[link.platform.toLowerCase()] || lucide.Github
+            const Icon = link.icon
             return (
               <a
                 key={link.platform}
@@ -33,7 +36,7 @@ export const Sidebar: React.FC = () => {
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 text-secondary-text hover:text-primary transition-colors"
               >
-                <Icon className="h-4 w-4" />
+                <Icon className="h-4 w-4" aria-hidden="true" />
                 <span>{link.platform}</span>
               </a>
             )
@@ -41,25 +44,32 @@ export const Sidebar: React.FC = () => {
         </div>
 
         {/* Navigation */}
-        <nav className="mb-8 space-y-2">
-          {navigationLinks.map((nav) => (
-            <a
-              key={nav.id}
-              href={nav.url}
-              className={`flex items-center gap-3 px-3 py-2 rounded-md text-secondary-text hover:bg-primary hover:text-white hover:no-underline transition-colors ${
-                // Active state will be handled by the layout or via URL hash
-                // We'll leave it as is for now, and the layout can set active class
-                ''
-              }`}
-            >
-              {/* We'll use a simple icon for navigation - can be improved */}
-              <span className="h-4 w-4 flex items-center justify-center">
+        <nav className="mb-8 space-y-2" aria-label="Primary">
+          {navigationLinks.map((nav) => {
+            const isActive = nav.id === activeId
+            return (
+              <a
+                key={nav.id}
+                href={nav.url}
+                aria-current={isActive ? 'page' : undefined}
+                className={`flex items-center gap-3 px-3 py-2 rounded-md transition-colors ${
+                  isActive
+                    ? 'bg-primary text-white'
+                    : 'text-secondary-text hover:bg-primary hover:text-white hover:no-underline'
+                }`}
+              >
                 {/* Using a dot as placeholder - can be replaced with Lucide icons later */}
-                <div className="h-2 w-2 rounded-full bg-secondary-text" />
-              </span>
-              <span className="whitespace-nowrap">{nav.title}</span>
-            </a>
-          ))}
+                <span className="h-4 w-4 flex items-center justify-center" aria-hidden="true">
+                  <div
+                    className={`h-2 w-2 rounded-full ${
+                      isActive ? 'bg-white' : 'bg-secondary-text'
+                    }`}
+                  />
+                </span>
+                <span className="whitespace-nowrap">{nav.title}</span>
+              </a>
+            )
+          })}
         </nav>
 
         {/* Hire Me CTA */}

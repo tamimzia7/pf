@@ -14,7 +14,7 @@ export const MobileHeader: React.FC<MobileHeaderProps> = ({ isMenuOpen, onToggle
       </div>
       <button
         onClick={onToggleMenu}
-        className="p-2 rounded-md hover:bg-primary-hover text-main-text"
+        className="p-2 rounded-md hover:bg-primary/10 text-main-text"
         aria-label="Open menu"
       >
         {isMenuOpen ? <lucide.X className="h-5 w-5" /> : <lucide.Menu className="h-5 w-5" />}

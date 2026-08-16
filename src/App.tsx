@@ -1,20 +1,10 @@
 import React from 'react'
-import { PortfolioLayout } from '@/components/layout/PortfolioLayout'
+import { PortfolioLayout, Section } from '@/components/layout/PortfolioLayout'
 import { Hero } from '@/components/sections/Hero'
-import { Section } from '@/components/layout/PortfolioLayout'
+import { About } from '@/components/sections/About'
+import { WhatIDo } from '@/components/sections/WhatIDo'
 
 // Placeholder sections for navigation
-const About: React.FC = () => (
-  <Section id="about" className="pb-20">
-    <div className="container mx-auto px-4 lg:px-8">
-      <h2 className="mb-6 text-4xl font-bold text-main-text">About Me</h2>
-      <p className="text-secondary-text lg:text-lg">
-        Placeholder for About section. This section will be built in a later phase.
-      </p>
-    </div>
-  </Section>
-)
-
 const Skills: React.FC = () => (
   <Section id="skills" className="pb-20">
     <div className="container mx-auto px-4 lg:px-8">
@@ -86,6 +76,7 @@ const App: React.FC = () => {
     <PortfolioLayout>
       <Hero />
       <About />
+      <WhatIDo />
       <Skills />
       <Projects />
       <Services />

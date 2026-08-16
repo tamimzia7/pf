@@ -8,6 +8,20 @@ interface PortfolioLayoutProps {
   children: React.ReactNode
 }
 
+interface SectionProps {
+  id: string
+  children: React.ReactNode
+  className?: string
+}
+
+export const Section: React.FC<SectionProps> = ({ id, children, className = '' }) => {
+  return (
+    <section id={id} className={className}>
+      {children}
+    </section>
+  )
+}
+
 export const PortfolioLayout: React.FC<PortfolioLayoutProps> = ({ children }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeNavId, setActiveNavId] = useState<string | null>(null)
@@ -41,7 +55,7 @@ export const PortfolioLayout: React.FC<PortfolioLayoutProps> = ({ children }) =>
   return (
     <div className="relative min-h-screen">
       {/* Sidebar - Desktop only */}
-      <Sidebar />
+      <Sidebar activeId={activeNavId} />
 
       {/* Main content */}
       <main className={`lg:ml-64 lg:p-12 p-6 pt-4 lg:pt-0`}>
@@ -58,7 +72,7 @@ export const PortfolioLayout: React.FC<PortfolioLayoutProps> = ({ children }) =>
               <h2 className="text-2xl font-bold text-main-text">Tamim Zia</h2>
               <p className="mt-2 text-secondary-text">Full Stack Developer</p>
             </div>
-            <Navigation className="space-y-4" />
+            <Navigation className="space-y-4" activeId={activeNavId} />
             <button
               onClick={closeMenu}
               className="mt-8 w-full btn-secondary"
