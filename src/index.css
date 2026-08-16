@@ -1,3 +1,88 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Custom base styles */
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #FFFFFF;
+  color: #111827;
+}
+
+/* Component styles */
+.card {
+  background-color: #FFFFFF; /* background */
+  border: 1px solid #E5E7EB; /* border */
+  border-radius: 0.75rem; /* rounded-xl */
+}
+
+.btn-primary {
+  background-color: #16A34A; /* primary */
+  color: #FFFFFF;
+  padding: 0.75rem 1.5rem; /* px-6 py-3 */
+  border-radius: 0.5rem; /* rounded-md */
+  font-weight: 500; /* font-medium */
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.btn-primary:hover {
+  background-color: #15803D; /* primary-dark */
+}
+.btn-primary:focus {
+  outline: none;
+  ring-width: 2px;
+  ring-color: #16A34A; /* primary */
+  ring-offset-width: 2px;
+}
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background-color: #FFFFFF; /* background */
+  color: #111827; /* main-text */
+  border: 1px solid #E5E7EB; /* border */
+  padding: 0.75rem 1.5rem; /* px-6 py-3 */
+  border-radius: 0.5rem; /* rounded-md */
+  font-weight: 500; /* font-medium */
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+.btn-secondary:hover {
+  background-color: #16A34A; /* primary */
+  color: #FFFFFF;
+  border-color: #16A34A; /* primary */
+}
+.btn-secondary:focus {
+  outline: none;
+  ring-width: 2px;
+  ring-color: #16A34A; /* primary */
+  ring-offset-width: 2px;
+}
+.btn-secondary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.link {
+  color: #111827; /* main-text */
+  transition: color 0.2s ease;
+}
+.link:hover {
+  color: #16A34A; /* primary */
+}
+
+/* Utilities for future */
+.dark-mode-support {
+  @media (prefers-color-scheme: dark) {
+    /* Dark mode styles will go here later */
+  }
+}

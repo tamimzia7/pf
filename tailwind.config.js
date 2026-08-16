@@ -18,6 +18,13 @@ module.exports = {
         border: '#E5E7EB',
         'soft-border': '#F1F5F9',
       },
+      fontFamily: {
+        inter: ['Inter', 'sans-serif'],
+      },
+      container: {
+        center: true,
+        padding: '1rem',
+      },
     },
   },
   plugins: [],
