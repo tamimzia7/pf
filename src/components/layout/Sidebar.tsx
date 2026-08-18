@@ -8,7 +8,7 @@ interface SidebarProps {
 export const Sidebar: React.FC<SidebarProps> = ({ activeId }) => {
   return (
     <aside className="lg:block lg:fixed lg:left-0 lg:top-0 lg:h-screen lg:w-64 lg:border-r lg:border-border">
-      <div className="p-6 lg:p-8">
+      <div className="p-6 lg:p-8 h-full overflow-y-auto">
         {/* Profile */}
         <div className="mb-8">
           <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary-light">

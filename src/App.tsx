@@ -1,5 +1,5 @@
 import React from 'react'
-import { PortfolioLayout, Section } from '@/components/layout/PortfolioLayout'
+import { PortfolioLayout } from '@/components/layout/PortfolioLayout'
 import { Hero } from '@/components/sections/Hero'
 import { About } from '@/components/sections/About'
 import { WhatIDo } from '@/components/sections/WhatIDo'
@@ -8,29 +8,8 @@ import { Projects } from '@/components/sections/Projects'
 import { Services } from '@/components/sections/Services'
 import { Resume } from '@/components/sections/Resume'
 import { Testimonials } from '@/components/sections/Testimonials'
-
-// Placeholder sections for navigation
-const Blog: React.FC = () => (
-  <Section id="blog" className="pb-20">
-    <div className="container mx-auto px-4 lg:px-8">
-      <h2 className="mb-6 text-4xl font-bold text-main-text">Blog</h2>
-      <p className="text-secondary-text lg:text-lg">
-        Placeholder for Blog section. This section will be built in a later phase.
-      </p>
-    </div>
-  </Section>
-)
-
-const Contact: React.FC = () => (
-  <Section id="contact" className="pb-20">
-    <div className="container mx-auto px-4 lg:px-8">
-      <h2 className="mb-6 text-4xl font-bold text-main-text">Contact</h2>
-      <p className="text-secondary-text lg:text-lg">
-        Placeholder for Contact section. This section will be built in a later phase.
-      </p>
-    </div>
-  </Section>
-)
+import { Blog } from '@/components/sections/Blog'
+import { Contact } from '@/components/sections/Contact'
 
 const App: React.FC = () => {
   return (

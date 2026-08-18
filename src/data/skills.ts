@@ -21,6 +21,35 @@ export const skillCategories: SkillCategory[] = [
     ]
   },
   {
+    id: 'laravel-php',
+    title: 'Laravel / PHP Development',
+    description: 'Building server-side applications and APIs using Laravel and PHP ecosystem.',
+    technologies: [
+      'Laravel',
+      'PHP'
+    ]
+  },
+  {
+    id: 'sqa',
+    title: 'Software Quality Assurance',
+    description: 'Ensuring software quality through testing, bug detection, and quality engineering practices.',
+    technologies: [
+      'Software Testing',
+      'Bug Detection',
+      'Quality Engineering'
+    ]
+  },
+  {
+    id: 'cyber-security',
+    title: 'Cyber Security',
+    description: 'Protecting applications and data through secure coding practices and security awareness.',
+    technologies: [
+      'Application Security',
+      'Secure Software Development',
+      'Security Awareness'
+    ]
+  },
+  {
     id: 'backend',
     title: 'Backend Development',
     description: 'Designing and implementing server-side logic, APIs, and system architecture.',
@@ -88,6 +117,7 @@ export const skillCategories: SkillCategory[] = [
 
 // Core Stack - Primary technologies that receive stronger visual emphasis
 export const coreStack: string[] = [
+  'Laravel',
   'React',
   'TypeScript',
   'Node.js',
