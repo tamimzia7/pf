@@ -21,6 +21,7 @@ export const navigationLinks: NavigationLink[] = [
   { id: 'projects', title: 'Projects', url: '#projects' },
   { id: 'services', title: 'Services', url: '#services' },
   { id: 'resume', title: 'Resume', url: '#resume' },
+  { id: 'testimonials', title: 'Testimonials', url: '#testimonials' },
   { id: 'blog', title: 'Blog', url: '#blog' },
   { id: 'contact', title: 'Contact', url: '#contact' },
 ]
