@@ -29,7 +29,7 @@ export const navigationLinks: NavigationLink[] = [
 export const socialLinks: SocialLink[] = [
   {
     platform: 'GitHub',
-    url: 'https://github.com/tamimzia',
+    url: 'https://github.com/tamimzia7',
     icon: GitFork,
   },
   {
