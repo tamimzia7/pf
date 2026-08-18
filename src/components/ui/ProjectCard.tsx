@@ -4,22 +4,45 @@ interface ProjectCardProps {
   project: {
     id: string;
     title: string;
-    category: string;
+    shortDescription: string;
     description: string;
-    image: string;
+    category: string;
     technologies: string[];
+    role: string;
+    problem: string;
+    solution: string;
+    architecture: string;
+    features: string[];
+    challenges: string[];
+    solutions: string[];
+    testing: string;
+    security: string;
+    businessImpact: string;
     githubUrl?: string;
     liveUrl?: string;
+    image: string;
+    status?: string;
+    featured?: boolean;
   };
   featured?: boolean;
+  onProjectSelect?: (project: ProjectCardProps['project']) => void;
 }
 
-export const ProjectCard: React.FC<ProjectCardProps> = ({ project, featured = false }) => {
+export const ProjectCard: React.FC<ProjectCardProps> = ({ project, featured = false, onProjectSelect }) => {
   const imageHeight = featured ? 'h-64' : 'h-48';
   const titleSize = featured ? 'text-xl' : 'text-lg';
 
+  const handleProjectClick = () => {
+    if (onProjectSelect) {
+      onProjectSelect(project);
+    }
+  };
+
   return (
-    <div className="card card-hover relative overflow-hidden">
+    <div 
+      className={`card card-hover relative overflow-hidden cursor-pointer ${featured ? 'shadow-lg' : ''}`}
+      onClick={handleProjectClick}
+    >
       <img
         src={project.image}
         alt={project.title}
@@ -33,7 +56,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, featured = fa
           {project.category}
         </span>
         <h3 className={`mb-2 ${titleSize} font-semibold text-main-text`}>{project.title}</h3>
-        <p className="mb-4 text-secondary-text">{project.description}</p>
+        <p className="mb-4 text-secondary-text">{project.shortDescription}</p>
         <div className="flex flex-wrap gap-2 mb-4">
           {project.technologies.map((tech) => (
             <TechnologyBadge
@@ -44,7 +67,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, featured = fa
             />
           ))}
         </div>
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center mt-4">
           {project.liveUrl && (
             <a
               href={project.liveUrl}
@@ -52,7 +75,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, featured = fa
               rel="noopener noreferrer"
               className="btn-secondary"
             >
-              View Case Study
+              View Demo
             </a>
           )}
           {project.githubUrl && (
