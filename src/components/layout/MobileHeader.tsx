@@ -9,7 +9,7 @@ interface MobileHeaderProps {
 export const MobileHeader: React.FC<MobileHeaderProps> = ({ isMenuOpen, onToggleMenu }) => {
   return (
     <header className="lg:hidden fixed top-0 left-0 right-0 z-50 flex h-14 items-center justify-between px-4 bg-background border-b border-border">
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-2 min-w-0">
         <div className="h-8 w-8 overflow-hidden rounded-md flex-shrink-0">
           <img
             src="/profile.png"
@@ -17,7 +17,7 @@ export const MobileHeader: React.FC<MobileHeaderProps> = ({ isMenuOpen, onToggle
             className="h-full w-full object-cover"
           />
         </div>
-        <span className="text-xl font-bold text-main-text">
+        <span className="text-lg font-bold text-main-text truncate">
           Tamim Zia
         </span>
       </div>

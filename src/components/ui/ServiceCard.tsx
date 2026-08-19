@@ -21,7 +21,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
 
   return (
     <div className={`card card-hover relative overflow-hidden ${featured ? 'shadow-lg' : ''}`}>
-      <div className="p-6">
+      <div className="p-4 sm:p-5 lg:p-6">
         {/* Icon */}
         <div className={`mb-4 flex ${iconSize} items-center justify-center rounded-lg bg-primary/10`}>
           <Icon className="h-5 w-5 text-primary" />

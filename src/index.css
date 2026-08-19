@@ -23,6 +23,11 @@ html {
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
+#root {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
@@ -31,12 +36,16 @@ body {
   overflow-x: hidden;
 }
 
-/* Mobile responsive base */
-@media (max-width: 640px) {
+/* Mobile responsive base - screens below 768px */
+@media (max-width: 767px) {
+  body {
+    font-size: 14px;
+    line-height: 1.65;
+  }
   .btn-primary,
   .btn-secondary {
     padding: 0.625rem 1rem;
-    font-size: 0.875rem;
+    font-size: 0.9375rem;
     width: 100%;
     text-align: center;
     display: inline-block;

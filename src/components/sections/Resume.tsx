@@ -8,14 +8,14 @@ const sectionDescription = 'A concise professional overview of my development ex
 
 export const Resume: React.FC = () => {
   return (
-    <Section id="resume" className="bg-soft-background py-16 lg:py-20">
+    <Section id="resume" className="bg-soft-background py-8 sm:py-12 lg:py-16">
       <div className="container mx-auto px-4 lg:px-8">
         {/* Heading */}
-        <div className="fade-in-up mb-10 lg:mb-14">
+        <div className="fade-in-up mb-6 sm:mb-8 lg:mb-10">
           <p className="mb-3 text-sm font-medium uppercase tracking-wider text-primary">
             {sectionLabel}
           </p>
-          <h2 className="text-3xl font-bold text-main-text sm:text-4xl lg:text-5xl">
+          <h2 className="text-xl font-bold text-main-text sm:text-2xl lg:text-3xl">
             {sectionTitle}
           </h2>
           <p className="mb-6 text-secondary-text lg:text-lg leading-relaxed">
@@ -32,17 +32,17 @@ export const Resume: React.FC = () => {
         <div className="grid gap-10 lg:grid-cols-2">
           {/* Experience */}
           <div className="space-y-8">
-            <h3 className="mb-4 text-2xl font-semibold text-main-text">Professional Experience</h3>
+            <h3 className="mb-4 text-lg sm:text-xl font-semibold text-main-text">Professional Experience</h3>
             {resumeData.experience.map((exp) => (
               <div
                 key={exp.id}
-                className="card p-6 fade-in-up"
+                className="card p-4 sm:p-5 lg:p-6 fade-in-up"
                 style={{ animationDelay: `${resumeData.experience.indexOf(exp) * 80}ms` }}
               >
                 <div className="flex items-start gap-4">
                   <div className="flex-shrink-0 h-3 w-3 rounded-full bg-primary" />
                   <div>
-                    <h4 className="mb-1 text-lg font-semibold text-main-text">
+                    <h4 className="mb-1 text-base font-semibold text-main-text">
                       {exp.role}
                     </h4>
                     <p className="mb-1 text-secondary-text">
@@ -64,17 +64,17 @@ export const Resume: React.FC = () => {
 
           {/* Education */}
           <div className="space-y-8">
-            <h3 className="mb-4 text-2xl font-semibold text-main-text">Education</h3>
+            <h3 className="mb-4 text-lg sm:text-xl font-semibold text-main-text">Education</h3>
             {resumeData.education.map((edu) => (
               <div
                 key={edu.id}
-                className="card p-6 fade-in-up"
+                className="card p-4 sm:p-5 lg:p-6 fade-in-up"
                 style={{ animationDelay: `${resumeData.education.indexOf(edu) * 80}ms` }}
               >
                 <div className="flex items-start gap-4">
                   <div className="flex-shrink-0 h-3 w-3 rounded-full bg-primary" />
                   <div>
-                    <h4 className="mb-1 text-lg font-semibold text-main-text">
+                    <h4 className="mb-1 text-base font-semibold text-main-text">
                       {edu.degree}
                     </h4>
                     <p className="mb-1 text-secondary-text">

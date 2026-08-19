@@ -38,14 +38,14 @@ export const Contact: React.FC = () => {
   const email = emailLink ? emailLink.url.replace('mailto:', '') : '';
 
   return (
-    <Section id="contact" className="bg-soft-background py-16 lg:py-20">
+    <Section id="contact" className="bg-soft-background py-8 sm:py-12 lg:py-16">
       <div className="container mx-auto px-4 lg:px-8">
         {/* Heading */}
-        <div className="fade-in-up mb-10 lg:mb-14">
+        <div className="fade-in-up mb-6 sm:mb-8 lg:mb-10">
           <p className="mb-3 text-sm font-medium uppercase tracking-wider text-primary">
             {sectionLabel}
           </p>
-          <h2 className="text-3xl font-bold text-main-text sm:text-4xl lg:text-5xl">
+          <h2 className="text-xl font-bold text-main-text sm:text-2xl lg:text-3xl">
             {sectionTitle}
           </h2>
           <p className="mb-6 text-secondary-text lg:text-lg leading-relaxed">
@@ -66,7 +66,7 @@ export const Contact: React.FC = () => {
         <div className="grid gap-8 lg:grid-cols-2">
           {/* Contact Information */}
           <div className="space-y-6">
-            <h3 className="mb-2 text-2xl font-semibold text-main-text">Contact Information</h3>
+            <h3 className="mb-2 text-lg sm:text-xl font-semibold text-main-text">Contact Information</h3>
             <div className="space-y-4">
               {socialLinks.map((link) => {
                 const Icon = link.icon as any; // We know it's a LucideIcon from the data
@@ -92,7 +92,7 @@ export const Contact: React.FC = () => {
 
           {/* Contact Form */}
           <div>
-            <h3 className="mb-2 text-2xl font-semibold text-main-text">Send a Message</h3>
+            <h3 className="mb-2 text-lg sm:text-xl font-semibold text-main-text">Send a Message</h3>
             <form onSubmit={handleSubmit} className="space-y-5">
               <div className="space-y-2">
                 <label htmlFor="name" className="block text-sm font-medium text-main-text mb-1">

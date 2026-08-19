@@ -88,14 +88,14 @@ export const PortfolioLayout: React.FC<PortfolioLayoutProps> = ({ children }) =>
         )}
 
         {/* Main content wrapper */}
-        <div className="space-y-16">
+        <div className="space-y-8 sm:space-y-12 lg:space-y-16">
           {children}
         </div>
       </main>
 
       {/* Footer */}
       <footer className="border-t border-border/50">
-        <div className="container mx-auto px-4 lg:px-8 py-12">
+        <div className="container mx-auto px-4 lg:px-8 py-8 lg:py-12">
           <div className="text-center space-y-6">
             <div className="space-y-2">
               <h3 className="text-xl font-bold text-main-text">Tamim Zia</h3>

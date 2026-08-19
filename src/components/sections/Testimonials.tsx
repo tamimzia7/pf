@@ -26,14 +26,14 @@ const cards = [
 
 export const Testimonials: React.FC = () => {
   return (
-    <Section id="testimonials" className="bg-soft-background py-16 lg:py-20">
+    <Section id="testimonials" className="bg-soft-background py-8 sm:py-12 lg:py-16">
       <div className="container mx-auto px-4 lg:px-8">
         {/* Heading */}
-        <div className="fade-in-up mb-10 lg:mb-14">
+        <div className="fade-in-up mb-6 sm:mb-8 lg:mb-10">
           <p className="mb-3 text-sm font-medium uppercase tracking-wider text-primary">
             {sectionLabel}
           </p>
-          <h2 className="text-3xl font-bold text-main-text sm:text-4xl lg:text-5xl">
+          <h2 className="text-xl font-bold text-main-text sm:text-2xl lg:text-3xl">
             {sectionTitle}
           </h2>
           <p className="mb-6 text-secondary-text lg:text-lg leading-relaxed">

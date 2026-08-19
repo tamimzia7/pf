@@ -15,13 +15,13 @@ export const Hero: React.FC = () => {
             </div>
 
             {/* Name and Role */}
-            <h1 className="mb-2 text-3xl font-bold text-main-text sm:text-4xl lg:text-5xl xl:text-6xl">
+            <h1 className="mb-2 text-2xl font-bold text-main-text sm:text-3xl lg:text-5xl xl:text-6xl">
               Hello, I'm{' '}
               <span className="block">
                 Tamim Zia
               </span>
             </h1>
-            <p className="mb-6 text-xl font-medium text-main-text lg:text-2xl">
+            <p className="mb-6 text-base font-medium text-main-text lg:text-2xl">
               <span className="text-primary">Full Stack Developer</span>
             </p>
 
@@ -62,7 +62,7 @@ export const Hero: React.FC = () => {
 
           {/* Profile Image Placeholder */}
           <div className="mt-8 flex justify-center lg:mt-0 lg:w-1/2 lg:justify-center lg:items-center">
-            <div className="h-56 w-56 sm:h-64 sm:w-64 lg:h-72 lg:w-72 rounded-xl border border-background overflow-hidden">
+            <div className="h-40 w-40 sm:h-56 sm:w-56 lg:h-72 lg:w-72 rounded-xl border border-background overflow-hidden">
               <img
                 src="/profile.png"
                 alt="Tamim Zia"

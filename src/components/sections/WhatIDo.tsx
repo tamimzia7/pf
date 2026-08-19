@@ -7,14 +7,14 @@ const sectionTitle = 'What I Do'
 
 export const WhatIDo: React.FC = () => {
   return (
-    <Section id="what-i-do" className="py-16 lg:py-20">
+    <Section id="what-i-do" className="py-8 sm:py-12 lg:py-16">
       <div className="container mx-auto px-4 lg:px-8">
         {/* Heading */}
-        <div className="fade-in-up mb-10 lg:mb-14">
+        <div className="fade-in-up mb-6 sm:mb-8 lg:mb-10">
           <p className="mb-3 text-sm font-medium uppercase tracking-wider text-primary">
             {sectionLabel}
           </p>
-          <h2 className="text-3xl font-bold text-main-text sm:text-4xl lg:text-5xl">
+          <h2 className="text-xl font-bold text-main-text sm:text-2xl lg:text-3xl">
             {sectionTitle}
           </h2>
         </div>
@@ -26,7 +26,7 @@ export const WhatIDo: React.FC = () => {
             return (
               <article
                 key={capability.id}
-                className="card card-hover fade-in-up p-6 lg:p-8"
+                className="card card-hover fade-in-up p-4 sm:p-5 lg:p-6"
                 style={{ animationDelay: `${index * 60}ms` }}
               >
                 <Icon className="mb-4 h-8 w-8 text-primary" aria-hidden="true" />
