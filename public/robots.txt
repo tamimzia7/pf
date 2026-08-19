@@ -1,0 +1,7 @@
+# robots.txt for Tamim Zia's Portfolio
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://tamimzia.example.com/sitemap.xml
