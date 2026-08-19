@@ -276,59 +276,66 @@ export const projects: Project[] = [
     ]
   },
   {
-    id: 'personal-portfolio',
-    title: 'Personal Portfolio Website',
-    shortDescription: 'A modern, responsive personal portfolio website',
-    overview: 'A modern, responsive personal portfolio website built to showcase projects, skills, and professional experience with a clean design and smooth user experience.',
-    category: 'Frontend Portfolio',
+    id: 'aura-sari-ecommerce',
+    title: 'AURA – Sari E-commerce',
+    shortDescription: 'A modern e-commerce platform for saris and traditional fashion',
+    overview: 'AURA is a modern e-commerce platform specializing in saris and traditional fashion, designed to provide an elegant online shopping experience with curated collections and seamless checkout.',
+    category: 'E-commerce Platform',
     technologies: [
-      'React',
-      'TypeScript',
+      'Laravel',
+      'PHP',
+      'MySQL',
+      'Blade',
       'Tailwind CSS',
-      'Vite'
+      'JavaScript'
     ],
-    image: '/sp1.png',
-    status: 'Live',
+    image: '/ap1.png',
+    status: 'Production',
     featured: false,
     // Case study content
-    problem: 'Having a strong online presence is essential for developers, but creating a portfolio that effectively showcases work, skills, and experience in a visually appealing and maintainable way can be challenging.',
-    goal: 'To build a fast, responsive, and visually polished personal portfolio that highlights projects, technical skills, and professional background while providing an excellent user experience across all devices.',
-    solution: 'Developed a single-page portfolio application featuring smooth scrolling sections, responsive design, project case studies with detailed breakdowns, skill visualizations, and contact integration.',
+    problem: 'Traditional sari retailers face challenges reaching a wider audience beyond their physical stores, lacking an online presence that captures the elegance of their products and provides a modern shopping experience.',
+    goal: 'To create a premium e-commerce platform that showcases saris and traditional fashion with beautiful product presentations, easy navigation, and a smooth checkout process that drives online sales.',
+    solution: 'Developed a full-featured e-commerce platform with product catalogs, advanced filtering, shopping cart, secure checkout, order management, and responsive design optimized for fashion retail.',
     keyFeatures: [
-      'Fully responsive design optimized for mobile, tablet, and desktop',
-      'Smooth scrolling single-page navigation',
-      'Project case study modals with detailed breakdowns',
-      'Dynamic skill and technology visualizations',
-      'Contact form with email integration',
-      'Fast load times with optimized assets and lazy loading',
-      'Dark/light theme support',
-      'Accessible and SEO-friendly markup',
-      'Clean component-based architecture',
-      'Easy to extend and maintain'
+      'Elegant product catalog with high-quality image galleries',
+      'Advanced filtering by category, fabric, occasion, and price range',
+      'Shopping cart with wishlist and save-for-later functionality',
+      'Secure checkout with multiple payment options',
+      'Order tracking and history management',
+      'Responsive design optimized for mobile shopping',
+      'Product search with auto-suggestions',
+      'Customer reviews and ratings system',
+      'Admin dashboard for inventory and order management',
+      'SEO-optimized product pages'
     ],
-    userExperience: 'Visitors can seamlessly navigate through sections, explore detailed project case studies, view technical skills and expertise, and get in touch through a streamlined contact form. The portfolio adapts fluidly to any screen size.',
-    technicalImplementation: 'React with TypeScript for type-safe component development, Tailwind CSS for utility-first styling, and Vite for fast development and optimized production builds. The application uses a modular component architecture for maintainability.',
+    userExperience: 'Customers can browse curated collections, filter products by preferences, view detailed product images with zoom, add items to cart, and complete purchases through a streamlined checkout. The platform provides a premium shopping experience that reflects the elegance of the products.',
+    technicalImplementation: 'Laravel backend with Blade templating for server-side rendering, Tailwind CSS for responsive and elegant styling, MySQL for product and order data, and JavaScript for interactive features. The platform uses Laravel Sanctum for authentication and Laravel Queue for order processing.',
     challenges: [
-      'Achieving a consistent design across all screen sizes and devices',
-      'Optimizing performance while maintaining rich visual interactions',
-      'Presenting project information in a clear and engaging format',
-      'Ensuring accessibility compliance across the entire site',
-      'Keeping the build output small and fast-loading'
+      'Creating a visually stunning platform that does justice to the elegance of traditional fashion',
+      'Optimizing image loading and gallery performance for high-resolution product photos',
+      'Building advanced filtering that handles diverse product attributes',
+      'Ensuring secure payment processing for e-commerce transactions',
+      'Managing inventory across a large and varied product catalog'
     ],
     solutions: [
-      'Implemented a mobile-first responsive design strategy with Tailwind CSS breakpoints',
-      'Used lazy loading, code splitting, and optimized image formats for performance',
-      'Designed reusable card and modal components for consistent project presentation',
-      'Followed WCAG 2.1 guidelines with semantic HTML, ARIA labels, and keyboard navigation',
-      'Configured Vite for optimized production builds with minimal bundle size'
+      'Designed a clean, elegant UI with focus on product imagery and whitespace',
+      'Implemented lazy loading and responsive image techniques for optimal gallery performance',
+      'Built a flexible filtering system using faceted search with multiple attribute support',
+      'Integrated PCI-compliant payment gateway with tokenization for secure transactions',
+      'Created an efficient inventory management system with real-time stock tracking'
     ],
-    outcome: 'The portfolio website achieves a 95+ Lighthouse performance score, loads in under 2 seconds, and provides a professional online presence that effectively showcases development work and expertise.',
+    outcome: 'AURA provides a premium online shopping experience for traditional fashion, with improved product discoverability, streamlined checkout flow, and a design that reflects the elegance of the products.',
     futureImprovements: [
-      'Blog section with Markdown-based content management',
-      'Dark mode toggle with system preference detection',
-      'Multi-language support for international audiences',
-      'Analytics dashboard for tracking visitor engagement',
-      'Integration with GitHub API for automatic project updates'
+      'AI-powered product recommendations based on browsing and purchase history',
+      'Virtual try-on features using augmented reality',
+      'Multi-vendor marketplace support for independent sellers',
+      'Loyalty program and rewards system for repeat customers',
+      'Integration with social commerce platforms for direct sales'
+    ],
+    // Screenshots for gallery
+    screenshots: [
+      '/ap2.png',
+      '/ap3.png'
     ]
   }
 ];

@@ -6,7 +6,7 @@ export const Hero: React.FC = () => {
   return (
     <section id="home" className="pt-20 lg:pt-24">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="lg:flex lg:items-center lg:gap-12">
+        <div className="flex flex-col lg:flex-row lg:items-center lg:gap-12">
           {/* Text Content */}
           <div className="lg:w-1/2">
             {/* Intro Label */}
@@ -15,7 +15,7 @@ export const Hero: React.FC = () => {
             </div>
 
             {/* Name and Role */}
-            <h1 className="mb-2 text-5xl font-bold text-main-text lg:text-6xl">
+            <h1 className="mb-2 text-3xl font-bold text-main-text sm:text-4xl lg:text-5xl xl:text-6xl">
               Hello, I'm{' '}
               <span className="block">
                 Tamim Zia
@@ -61,8 +61,8 @@ export const Hero: React.FC = () => {
           </div>
 
           {/* Profile Image Placeholder */}
-          <div className="lg:w-1/2 lg:flex lg:justify-center lg:items-center mt-8 lg:mt-0">
-            <div className="h-72 w-72 rounded-xl border border-background overflow-hidden">
+          <div className="mt-8 flex justify-center lg:mt-0 lg:w-1/2 lg:justify-center lg:items-center">
+            <div className="h-56 w-56 sm:h-64 sm:w-64 lg:h-72 lg:w-72 rounded-xl border border-background overflow-hidden">
               <img
                 src="/profile.png"
                 alt="Tamim Zia"

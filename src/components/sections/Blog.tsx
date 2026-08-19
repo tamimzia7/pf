@@ -1,9 +1,33 @@
 import React from 'react';
 import { Section } from '@/components/layout/PortfolioLayout';
+import { Server, ShieldCheck, LayoutDashboard, Plug } from 'lucide-react';
 
 const sectionLabel = 'THOUGHTS & INSIGHTS';
 const sectionTitle = 'Blog & Articles';
 const sectionDescription = 'I write about software development, system design, Laravel, automation, APIs and practical technology solutions.';
+
+const topics = [
+  {
+    icon: Server,
+    title: 'Laravel & Backend',
+    description: 'Building scalable Laravel applications, APIs, architecture and backend engineering.',
+  },
+  {
+    icon: ShieldCheck,
+    title: 'Software Quality',
+    description: 'Testing strategies, QA, debugging and building reliable software.',
+  },
+  {
+    icon: LayoutDashboard,
+    title: 'System Design',
+    description: 'Architecture decisions, database design and scalable systems.',
+  },
+  {
+    icon: Plug,
+    title: 'Automation & APIs',
+    description: 'AI automation, API integrations and practical workflows.',
+  },
+];
 
 export const Blog: React.FC = () => {
   return (
@@ -14,7 +38,7 @@ export const Blog: React.FC = () => {
           <p className="mb-3 text-sm font-medium uppercase tracking-wider text-primary">
             {sectionLabel}
           </p>
-          <h2 className="text-4xl font-bold text-main-text lg:text-5xl">
+          <h2 className="text-3xl font-bold text-main-text sm:text-4xl lg:text-5xl">
             {sectionTitle}
           </h2>
           <p className="mb-6 text-secondary-text lg:text-lg leading-relaxed">
@@ -22,20 +46,38 @@ export const Blog: React.FC = () => {
           </p>
         </div>
 
-        {/* Empty State for Blog */}
-        <div className="text-center p-10">
-          <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-primary-light mx-auto">
-            <span className="text-primary text-xl font-bold">B</span>
-          </div>
-          <h3 className="mb-3 text-2xl font-semibold text-main-text">
-            No articles yet
-          </h3>
-          <p className="mb-6 text-secondary-text lg:text-lg max-w-2xl mx-auto">
-            Blog articles will be added here as they are written.
+        {/* Featured Topics Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+          {topics.map((topic) => {
+            const Icon = topic.icon;
+            return (
+              <div
+                key={topic.title}
+                className="card p-5 flex flex-col"
+              >
+                <Icon className="mb-3 h-6 w-6 text-primary" aria-hidden="true" />
+                <h3 className="mb-1 text-base font-semibold text-main-text">
+                  {topic.title}
+                </h3>
+                <p className="mb-3 text-sm text-secondary-text leading-relaxed flex-1">
+                  {topic.description}
+                </p>
+                <span className="inline-block self-start px-2 py-0.5 text-xs font-medium text-primary bg-primary/10 rounded">
+                  Coming Soon
+                </span>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Bottom CTA */}
+        <div className="text-center">
+          <p className="text-main-text font-medium">
+            Articles are currently in progress.
           </p>
-          <a href="#contact" className="btn-primary">
-            Start a Conversation
-          </a>
+          <p className="mt-1 text-sm text-secondary-text">
+            Practical lessons, engineering decisions and real-world solutions will be published here.
+          </p>
         </div>
       </div>
     </Section>

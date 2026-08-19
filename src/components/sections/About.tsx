@@ -12,7 +12,7 @@ export const About: React.FC = () => {
           <p className="mb-3 text-sm font-medium uppercase tracking-wider text-primary">
             {aboutContent.label}
           </p>
-          <h2 className="text-4xl font-bold text-main-text lg:text-5xl">
+          <h2 className="text-3xl font-bold text-main-text sm:text-4xl lg:text-5xl">
             {aboutContent.title}
           </h2>
         </div>
@@ -27,15 +27,15 @@ export const About: React.FC = () => {
           </div>
 
           {/* Highlights */}
-          <ul className="space-y-4">
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {aboutContent.highlights.map((highlight, index) => (
               <li
                 key={highlight}
-                className="card fade-in-up flex items-center gap-4 p-5"
+                className="card fade-in-up flex items-center gap-3 p-3"
                 style={{ animationDelay: `${index * 80}ms` }}
               >
-                <CircleCheck className="h-6 w-6 shrink-0 text-primary" aria-hidden="true" />
-                <span className="text-main-text font-medium">{highlight}</span>
+                <CircleCheck className="h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
+                <span className="text-main-text font-medium text-sm">{highlight}</span>
               </li>
             ))}
           </ul>

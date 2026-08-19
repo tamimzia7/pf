@@ -53,12 +53,12 @@ export const PortfolioLayout: React.FC<PortfolioLayoutProps> = ({ children }) =>
   const closeMenu = () => setIsMenuOpen(false)
 
   return (
-    <div className="relative min-h-screen flex flex-col">
+    <div className="relative min-h-screen flex flex-col overflow-x-hidden">
       {/* Sidebar - Desktop only */}
       <Sidebar activeId={activeNavId} />
 
       {/* Main content */}
-      <main className={`flex-1 lg:ml-64 lg:p-12 p-6 pt-4 lg:pt-0`}>
+      <main className="flex-1 overflow-x-hidden lg:ml-64 lg:p-12 p-4 sm:p-6 pt-4 lg:pt-0">
         {/* Mobile Header - Mobile only */}
         <MobileHeader
           isMenuOpen={isMenuOpen}
@@ -67,7 +67,7 @@ export const PortfolioLayout: React.FC<PortfolioLayoutProps> = ({ children }) =>
 
         {/* Mobile Drawer - Mobile only */}
         {isMenuOpen && (
-          <div className="lg:hidden fixed inset-0 z-40 flex flex-col items-center justify-center bg-background/90 backdrop-blur-sm">
+          <div className="lg:hidden fixed inset-0 z-40 flex flex-col items-center justify-center bg-background/95 backdrop-blur-sm overflow-y-auto p-6">
             <div className="mb-6">
               <h2 className="text-2xl font-bold text-main-text">Tamim Zia</h2>
               <p className="mt-2 text-secondary-text">Full Stack Developer</p>

@@ -45,7 +45,7 @@ export const Contact: React.FC = () => {
           <p className="mb-3 text-sm font-medium uppercase tracking-wider text-primary">
             {sectionLabel}
           </p>
-          <h2 className="text-4xl font-bold text-main-text lg:text-5xl">
+          <h2 className="text-3xl font-bold text-main-text sm:text-4xl lg:text-5xl">
             {sectionTitle}
           </h2>
           <p className="mb-6 text-secondary-text lg:text-lg leading-relaxed">

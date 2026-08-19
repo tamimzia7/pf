@@ -21,12 +21,26 @@
 }
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
   background-color: #FFFFFF;
   color: #111827;
+  overflow-x: hidden;
+}
+
+/* Mobile responsive base */
+@media (max-width: 640px) {
+  .btn-primary,
+  .btn-secondary {
+    padding: 0.625rem 1rem;
+    font-size: 0.875rem;
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+  }
 }
 
 /* Component styles */
