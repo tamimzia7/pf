@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Section } from '@/components/layout/PortfolioLayout';
 import { projects } from '@/data/projects';
+import { type Project } from '@/data/projects';
 import { ProjectCard } from '@/components/ui/ProjectCard';
 import { CaseStudyModal } from '@/components/ui/CaseStudyModal';
 
@@ -9,14 +10,14 @@ const sectionTitle = 'Projects & Case Studies';
 const sectionDescription = 'A selection of software projects focused on solving practical problems through thoughtful design, modern development and scalable architecture.';
 
 export const Projects: React.FC = () => {
-  const [selectedProject, setSelectedProject] = useState<null | typeof projects[0]>(null);
+  const [selectedProject, setSelectedProject] = useState<null | Project>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Separate featured and non-featured projects
   const featuredProjects = projects.filter((project) => project.featured);
   const regularProjects = projects.filter((project) => !project.featured);
 
-  const handleProjectSelect = (project: typeof projects[0]) => {
+  const handleProjectSelect = (project: Project) => {
     setSelectedProject(project);
     setIsModalOpen(true);
   };
@@ -43,7 +44,7 @@ export const Projects: React.FC = () => {
         </div>
 
         {/* Featured Project(s) */}
-        {featuredProjects.length > 0 && (
+        {featuredProjects.length > 0 && ( 
           <div className="mb-12 lg:mb-16">
             <div className="space-y-8">
               {featuredProjects.map((project) => (

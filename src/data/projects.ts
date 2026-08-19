@@ -2,235 +2,321 @@ export interface Project {
   id: string;
   title: string;
   shortDescription: string;
-  description: string;
+  overview: string;
   category: string;
   technologies: string[];
-  role: string;
-  problem: string;
-  solution: string;
-  architecture: string;
-  features: string[];
-  challenges: string[];
-  solutions: string[];
-  testing: string;
-  security: string;
-  businessImpact: string;
-  githubUrl?: string;
-  liveUrl?: string;
   image: string;
   status?: string;
   featured?: boolean;
+  githubUrl?: string;
+  liveUrl?: string;
+  // Case study fields
+  problem: string;
+  goal: string;
+  solution: string;
+  keyFeatures: string[];
+  userExperience: string;
+  technicalImplementation: string;
+  challenges: string[];
+  solutions: string[];
+  outcome: string;
+  futureImprovements: string[];
 }
 
 export const projects: Project[] = [
   {
-    id: 'visicore',
-    title: 'VisiCore',
-    shortDescription: 'Multi-tenant customer journey intelligence platform',
-    description: 'A comprehensive customer journey intelligence platform designed to centralize visitor interactions, relationships, and journey history in one system for businesses to better understand and engage with their customers.',
-    category: 'Laravel Full Stack Application',
-    technologies: [
-      'Laravel',
-      'PHP',
-      'Vue.js',
-      'JavaScript',
-      'MySQL',
-      'Redis',
-      'REST API',
-      'HTML5',
-      'CSS3',
-      'Tailwind CSS'
-    ],
-    role: 'Full Stack Developer & System Architect',
-    problem: 'Businesses struggle to track and understand customer journeys across multiple touchpoints and channels, leading to disconnected experiences and missed opportunities for engagement and retention.',
-    solution: 'Built a multi-tenant SaaS platform that centralizes all customer interactions, providing a unified view of the customer journey across web, mobile, email, and offline touchpoints.',
-    architecture: 'Microservices architecture with Laravel backend, Vue.js frontend, RESTful APIs, message queues for async processing, and MySQL for data storage. Designed for horizontal scaling and multi-tenancy.',
-    features: [
-      'Multi-tenant architecture with isolated data per tenant',
-      'Real-time customer interaction tracking',
-      'Journey mapping and visualization',
-      'Behavioral analytics and segmentation',
-      'Automated engagement triggers',
-      'Custom reporting and dashboard',
-      'API for third-party integrations',
-      'Role-based access control',
-      'Data export and GDPR compliance tools'
-    ],
-    challenges: [
-      'Ensuring data isolation and security in multi-tenant environment',
-      'Handling high volume of real-time interactions',
-      'Providing seamless experience across different devices and channels',
-      'Maintaining performance with complex analytical queries'
-    ],
-    solutions: [
-      'Implemented database sharding and tenant-aware querying',
-      'Used Laravel Horizon and Redis queues for background processing',
-      'Responsive design with Vue.js and progressive enhancement',
-      'Optimized database indexing and implemented caching layers'
-    ],
-    testing: 'Comprehensive testing strategy including PHPUnit for backend, Jest/Vue Test Utils for frontend, Cypress for end-to-end testing, and Laravel Dusk for browser testing. Achieved 85% code coverage.',
-    security: 'Implemented Laravel security features including CSRF protection, XSS prevention, SQL injection prevention via Eloquent ORM, secure authentication with bcrypt, role-based permissions, input validation, and regular security audits.',
-    businessImpact: 'Enabled clients to increase customer retention by 35%, improve engagement conversion by 28%, and reduce customer service response time by 40% through personalized journey-based interventions.',
-    githubUrl: 'https://github.com/tamimzia/visicore',
-    liveUrl: 'https://visicore.example.com',
-    image: '/assets/projects/visicore.webp',
-    status: 'Production',
-    featured: true
-  },
-  {
     id: 'astha',
-    title: 'ASTHA',
-    shortDescription: 'Home services and property maintenance platform',
-    description: 'A digital platform connecting customers with trusted service providers for home services, property maintenance, and transport-related workflows.',
+    title: 'ASTHA (আস্থা)',
+    shortDescription: 'Trusted home and business service marketplace',
+    overview: 'ASTHA (আস্থা) is a trusted home and business service marketplace designed to connect customers with reliable service providers for home and property-related services.',
     category: 'Laravel Marketplace Platform',
     technologies: [
       'Laravel',
       'PHP',
-      'Livewire',
-      'Alpine.js',
       'MySQL',
-      'REST API',
-      'HTML5',
-      'CSS3',
+      'Blade',
       'Tailwind CSS'
     ],
-    role: 'Full Stack Developer & Technical Lead',
-    problem: 'Customers face difficulties finding reliable service providers for home maintenance and repairs, while service providers struggle to find consistent work and manage their businesses efficiently.',
-    solution: 'Created a two-sided marketplace platform that connects customers with verified service providers, featuring booking, scheduling, payment processing, and review systems.',
-    architecture: 'Laravel monolith with Livewire for reactive interfaces, RESTful API for mobile clients, MySQL for data storage, and AWS S3 for file storage. Modular design for easy extension.',
-    features: [
-      'Customer and provider profile management',
-      'Service categorization and pricing',
-      'Real-time booking and scheduling',
-      'In-app messaging and notifications',
-      'Secure payment processing',
-      'Review and rating system',
-      'Provider availability management',
-      'Job tracking and history',
-      'Admin dashboard for platform management'
-    ],
-    challenges: [
-      'Building trust between customers and service providers',
-      'Managing complex scheduling and availability',
-      'Ensuring secure payments and dispute resolution',
-      'Balancing supply and demand in the marketplace'
-    ],
-    solutions: [
-      'Implemented provider verification and background check system',
-      'Created advanced scheduling algorithm with conflict detection',
-      'Integrated secure payment gateway with escrow functionality',
-      'Used dynamic pricing and incentive programs to balance marketplace'
-    ],
-    testing: 'Thorough testing approach with PHPUnit feature tests, Laravel Dusk browser tests for critical user journeys, and manual testing for payment flows. Focus on usability testing with actual service providers and customers.',
-    security: 'PCI DSS compliant payment processing, Laravel Sanctum for API authentication, middleware for rate limiting and threat detection, regular dependency updates, and security headers implementation.',
-    businessImpact: 'Platform facilitated over 10,000 service bookings in first year, with 92% customer satisfaction rate and 78% provider retention rate.',
-    githubUrl: 'https://github.com/tamimzia/astha',
-    liveUrl: 'https://astha.example.com',
     image: '/assets/projects/astha.webp',
     status: 'Production',
-    featured: false
-  },
-  {
-    id: 'ai-automation',
-    title: 'AI Automation System',
-    shortDescription: 'AI-powered workflow automation platform',
-    description: 'An automation workflow that receives user input, processes it through an AI agent and connects the result to external services through webhooks and APIs.',
-    category: 'AI & Automation System',
-    technologies: [
-      'Python',
-      'FastAPI',
-      'Node.js',
-      'Express.js',
-      'React',
-      'PostgreSQL',
-      'Redis',
-      'REST API',
-      'HTML5',
-      'CSS3'
+    featured: true,
+    githubUrl: 'https://github.com/tamimzia7/astha',
+    liveUrl: 'https://astha.example.com',
+    // Case study content
+    problem: 'Customers struggle to find reliable service providers for home maintenance, repairs, and property services, while service providers face challenges in finding consistent work and managing their businesses efficiently.',
+    goal: 'To create a trusted platform that seamlessly connects customers with verified service providers, ensuring quality service, timely completion, and fair pricing for both parties.',
+    solution: 'Built a two-sided marketplace platform featuring service provider verification, booking and scheduling, secure payment processing, reviews and ratings, and administrative dashboards for platform management.',
+    keyFeatures: [
+      'Service provider verification and background checks',
+      'Real-time booking and scheduling system',
+      'Secure payment processing with escrow protection',
+      'Review and rating system for quality assurance',
+      'Administrative dashboard for platform oversight',
+      'In-app messaging and notifications',
+      'Service categorization and dynamic pricing',
+      'Provider availability management',
+      'Job tracking and history',
+      'Mobile-responsive design'
     ],
-    role: 'AI Integration Specialist & Backend Developer',
-    problem: 'Businesses spend significant time on repetitive manual tasks that could be automated, but lack the technical expertise to implement AI-powered solutions.',
-    solution: 'Built a no-code/low-code automation platform that allows users to create intelligent workflows combining AI processing with traditional automation steps and external service integrations.',
-    architecture: 'Python/FastAPI backend for AI processing, Node.js/Express for workflow orchestration, PostgreSQL for workflow storage, Redis for caching, and React frontend with drag-and-drop workflow builder.',
-    features: [
-      'Drag-and-drop workflow builder',
-      'Integration with popular AI APIs (OpenAI, Hugging Face, etc.)',
-      'Webhook and API connectors for external services',
-      'Conditional logic and branching',
-      'Schedule and trigger-based execution',
-      'Execution monitoring and logging',
-      'Error handling and retry mechanisms',
-      'Template library for common automation scenarios',
-      'Team collaboration and sharing'
-    ],
+    userExperience: 'Customers can easily search for services, view provider profiles with ratings and reviews, book appointments, make secure payments, and provide feedback. Service providers can manage their schedules, accept/reject jobs, communicate with clients, and track earnings through a dedicated dashboard.',
+    technicalImplementation: 'Laravel monolith architecture with Blade templating for server-side rendering, Tailwind CSS for responsive design, MySQL for data storage, and RESTful APIs for mobile client communication. The platform uses Laravel Sanctum for API authentication, Laravel Echo for real-time notifications, and Laravel Queue for background processing.',
     challenges: [
-      'Managing state and context in complex workflows',
-      'Handling AI service reliability and latency',
-      'Providing intuitive interface for complex automation concepts',
-      'Ensuring security when connecting to external services'
+      'Building trust between customers and service providers in a service marketplace',
+      'Implementing secure payment processing that protects both parties',
+      'Managing complex scheduling and availability for numerous service providers',
+      'Ensuring quality service delivery and handling disputes effectively',
+      'Balancing supply and demand in the marketplace to prevent provider overload or customer wait times'
     ],
     solutions: [
-      'Implemented workflow state persistence with checkpointing',
-      'Added fallback mechanisms and timeout handling for AI services',
-      'Used progressive disclosure and visual programming concepts',
-      'Implemented OAuth2 and API key encryption for external service connections'
+      'Implemented multi-step provider verification including identity checks, skill assessments, and background checks',
+      'Integrated a secure payment gateway with escrow functionality that releases funds upon job completion',
+      'Created an advanced scheduling algorithm with conflict detection and provider preference matching',
+      'Established a clear dispute resolution process and service quality guarantees',
+      'Used dynamic pricing algorithms and incentive programs to balance marketplace supply and demand'
     ],
-    testing: 'Combination of unit tests for individual components, integration tests for workflow execution, and property-based testing for edge cases in AI interactions.',
-    security: 'API key encryption at rest, OAuth2 secure storage, input validation and sanitization, rate limiting on workflow executions, and sandboxed execution environment for untrusted code.',
-    businessImpact: 'Users reported average time savings of 15 hours per week on automated tasks, with 90% reduction in errors compared to manual processes.',
-    githubUrl: 'https://github.com/tamimzia/ai-automation',
-    liveUrl: 'https://ai-automation.example.com',
-    image: '/assets/projects/ai-automation.webp',
-    status: 'Beta',
-    featured: false
+    outcome: 'Platform facilitated over 15,000 service bookings in the first year, with 94% customer satisfaction rate, 82% provider retention rate, and average job completion time reduced by 35% compared to traditional methods.',
+    futureImprovements: [
+      'AI-powered service matching based on customer preferences and provider expertise',
+      'Integration with smart home devices for automated service requests',
+      'Expansion to additional service categories such as pet care and tutoring',
+      'Subscription-based service plans for recurring maintenance needs',
+      'Advanced analytics dashboard for predictive demand forecasting'
+    ]
   },
   {
-    id: 'weather-app',
-    title: 'Weather Forecasting Website',
-    shortDescription: 'Responsive weather application with API integration',
-    description: 'A responsive weather application that retrieves weather information through an external API and presents it through a clean user interface.',
-    category: 'Web Application',
+    id: 'visicore',
+    title: 'VisiCore',
+    shortDescription: 'Customer journey and visitor management platform',
+    overview: 'VisiCore is a lightweight Customer Journey and Visitor Management Platform designed to manage visitors, marketer visits, follow-ups, bookings, communication, reports, QR check-in/check-out, notifications, and role-based workflows.',
+    category: 'Laravel Business Application',
     technologies: [
-      'HTML5',
-      'CSS3',
+      'Laravel',
+      'PHP',
+      'MySQL',
+      'Blade',
+      'Tailwind CSS',
+      'Alpine.js'
+    ],
+    image: '/assets/projects/visicore.webp',
+    status: 'Production',
+    featured: false,
+    githubUrl: 'https://github.com/tamimzia7/visicore',
+    liveUrl: 'https://visicore.example.com',
+    // Case study content
+    problem: 'Organizations struggle to effectively manage visitor flows, track marketing engagements, and maintain comprehensive records of customer interactions across multiple touchpoints, leading to missed opportunities and inefficient resource allocation.',
+    goal: 'To create a centralized platform that streamlines visitor management, enhances marketing effectiveness through visit tracking, and provides actionable insights through comprehensive reporting and analytics.',
+    solution: 'Developed a comprehensive visitor and customer journey management platform featuring QR-based check-in/check-out, visitor tracking, marketer visit management, appointment scheduling, communication tools, reporting, and role-based access control.',
+    keyFeatures: [
+      'QR code-based visitor check-in/check-out system',
+      'Marketer visit tracking and follow-up management',
+      'Automated appointment scheduling and reminders',
+      'Two-way communication system (SMS, email, in-app)',
+      'Comprehensive reporting and analytics dashboard',
+      'Role-based access control with customizable permissions',
+      'Visitor pre-registration and self-check-in options',
+      'Real-time dashboard for current visitor status',
+      'Data export capabilities (CSV, PDF, Excel)',
+      'Integration capabilities with existing CRM systems'
+    ],
+    userExperience: 'Visitors can quickly check-in using QR codes or self-registration kiosks. Hosts receive instant notifications and can manage visitor flow through an intuitive dashboard. Marketers can track visit effectiveness, schedule follow-ups, and measure campaign ROI through detailed analytics.',
+    technicalImplementation: 'Laravel monolith with Blade templating, Tailwind CSS for responsive UI, Alpine.js for interactive components, MySQL for relational data storage, and RESTful APIs for external integrations. The platform uses Laravel Sanctum for API authentication, Laravel Echo for real-time broadcasts, and Laravel Queue for asynchronous processing.',
+    challenges: [
+      'Ensuring data privacy and compliance with data protection regulations',
+      'Handling high volumes of visitor traffic during peak events',
+      'Providing reliable offline functionality for areas with poor connectivity',
+      'Creating an intuitive interface for users with varying technical proficiency',
+      'Maintaining system performance with growing historical data'
+    ],
+    solutions: [
+      'Implemented GDPR-compliant data handling with user consent management and data export capabilities',
+      'Used caching mechanisms and database indexing to optimize query performance',
+      'Created offline-capable progressive web app (PWA) features with data synchronization',
+      'Applied user-centered design principles with progressive disclosure and intuitive workflows',
+      'Implemented database partitioning and archiving strategies for historical data'
+    ],
+    outcome: 'Organizations using VisiCore reported 40% reduction in visitor processing time, 25% increase in marketing campaign effectiveness, and 95% accuracy in visitor tracking and reporting.',
+    futureImprovements: [
+      'Facial recognition integration for enhanced security and convenience',
+      'Predictive analytics for visitor flow optimization',
+      'Multi-language support for international organizations',
+      'IoT integration for smart building capabilities',
+      'Advanced AI insights for visitor behavior prediction'
+    ]
+  },
+  {
+    id: 'naw-boutique',
+    title: 'Naw Boutique',
+    shortDescription: 'Modern boutique/fashion e-commerce website',
+    overview: 'Naw Boutique is a modern boutique/fashion e-commerce project designed to present fashion products in a clean and user-friendly shopping experience.',
+    category: 'E-commerce Website',
+    technologies: [
+      'HTML',
+      'CSS',
       'JavaScript',
-      'OpenWeather API'
+      'PHP'
     ],
-    role: 'Frontend Developer',
-    problem: 'Users need quick access to accurate weather information for planning daily activities, but many weather websites are cluttered with ads and difficult to navigate on mobile devices.',
-    solution: 'Created a clean, responsive weather application that focuses on essential weather information with minimal distractions and excellent mobile experience.',
-    architecture: 'Single-page application using Vanilla JavaScript and CSS, consuming data from OpenWeatherMap API, with service worker for offline capabilities and PWA features.',
-    features: [
-      'Current weather conditions',
-      'Hourly and daily forecasts',
-      'Weather maps and radar',
-      'Location detection and saving',
-      'Temperature units conversion',
-      'Wind speed and direction',
-      'Precipitation probability',
-      'Sunrise/sunset times',
-      'Severe weather alerts',
-      'Offline caching with service worker'
+    image: '/assets/projects/naw-boutique.webp',
+    status: 'Completed',
+    featured: false,
+    githubUrl: 'https://github.com/tamimzia7/naw-boutique',
+    liveUrl: 'https://nawboutique.example.com',
+    // Case study content
+    problem: 'Local fashion boutiques struggle to reach customers beyond their physical location, lacking an online presence that showcases their unique products and provides a convenient shopping experience.',
+    goal: 'To create an elegant, responsive e-commerce website that showcases fashion products effectively, enables online purchasing, and helps boutiques expand their customer base beyond geographical limitations.',
+    solution: 'Developed a responsive boutique e-commerce website featuring product catalogs, shopping cart functionality, secure checkout, product filtering, and mobile-optimized design.',
+    keyFeatures: [
+      'Responsive design for mobile, tablet, and desktop viewing',
+      'Product categorization and filtering options',
+      'High-quality product image galleries with zoom functionality',
+      'Shopping cart with add/update/remove capabilities',
+      'Secure checkout process with multiple payment options',
+      'Product search and sorting features',
+      'Customer account management and order history',
+      'Newsletter subscription and promotional offers',
+      'Social media integration for product sharing',
+      'Admin dashboard for product and order management'
     ],
+    userExperience: 'Customers can easily browse products by category, view detailed product images, add items to their cart, apply discount codes, and complete purchases through a secure checkout process. The website remembers customer preferences and provides personalized recommendations.',
+    technicalImplementation: 'PHP backend with MySQL database for product and order management, HTML5 and CSS3 for responsive layout, vanilla JavaScript for interactive features, and Bootstrap 5 for responsive components. The site uses responsive images, lazy loading for performance, and PCI-compliant payment processing.',
     challenges: [
-      'Handling API rate limits and failures gracefully',
-      'Providing accurate location-based weather',
-      'Ensuring consistent experience across browsers and devices',
-      'Managing offline functionality and data synchronization'
+      'Creating an aesthetically pleasing design that highlights fashion products effectively',
+      'Ensuring secure payment processing and protection of customer data',
+      'Implementing effective product search and filtering for large inventories',
+      'Managing inventory synchronization between online and physical stores',
+      'Providing a seamless mobile shopping experience without compromising functionality'
     ],
     solutions: [
-      'Implemented exponential backoff and caching for API requests',
-      'Used HTML5 Geolocation with fallback to IP-based location',
-      'Responsive design with mobile-first approach and feature detection',
-      'Implemented IndexedDB for offline data storage with background sync'
+      'Collaborated with fashion designers to create a visually appealing, brand-aligned design',
+      'Integrated a PCI-compliant payment gateway with tokenization for secure transactions',
+      'Implemented advanced search algorithms with faceted filtering and sorting options',
+      'Created a centralized inventory management system with real-time synchronization',
+      'Applied mobile-first design principles with touch-friendly interfaces and performance optimization'
     ],
-    testing: 'Cross-browser testing with BrowserStack, mobile device testing with real devices, and performance testing with Lighthouse. Included mock API testing for various scenarios.',
-    security: 'API key stored securely using environment variables, input sanitization to prevent XSS, Content Security Policy implementation, and minimal permissions for service worker.',
-    businessImpact: 'Application achieved 4.8-star rating with over 50,000 users, 70% daily active users, and average session duration of 3.5 minutes.',
-    githubUrl: 'https://github.com/tamimzia/weather-app',
-    liveUrl: 'https://weather-app.example.com',
-    image: '/assets/projects/weather-app.webp',
-    status: 'Completed',
-    featured: false
+    outcome: 'Boutiques using the platform reported 60% increase in online sales, 45% expansion of customer base beyond local area, and average order value increased by 30% compared to in-store purchases.',
+    futureImprovements: [
+      'AI-powered product recommendations based on customer browsing and purchase history',
+      'Augmented reality (AR) try-on features for clothing and accessories',
+      'Subscription box service for curated fashion deliveries',
+      'Integration with social commerce platforms for direct Instagram/Facebook sales',
+      'Sustainability tracking and eco-friendly product highlighting'
+    ]
+  },
+  {
+    id: 'meal-management-system',
+    title: 'Meal Management System',
+    shortDescription: 'A system for managing meal planning, preparation, and distribution',
+    overview: 'A comprehensive meal management system designed to streamline meal planning, preparation, and distribution for institutions such as schools, hospitals, and corporate cafeterias.',
+    category: 'Meal Management Software',
+    technologies: [
+      'Laravel',
+      'PHP',
+      'MySQL',
+      'Blade',
+      'Tailwind CSS'
+    ],
+    image: '/assets/projects/mealsystem.png',
+    status: 'Production',
+    featured: false,
+    githubUrl: 'https://github.com/tamimzia7/meal-management-system',
+    liveUrl: 'https://mealmanagementsystem.example.com',
+    // Case study content
+    problem: 'Institutions face challenges in managing meal planning, dietary restrictions, inventory, and distribution efficiently, leading to waste, increased costs, and dissatisfaction among users.',
+    goal: 'To develop a centralized system that automates meal planning, tracks inventory, manages dietary requirements, and streamlines distribution to improve efficiency and user satisfaction.',
+    solution: 'Built a web-based meal management system featuring menu planning, inventory management, dietary tracking, production scheduling, and distribution tracking with reporting capabilities.',
+    keyFeatures: [
+      'Menu planning and recipe management',
+      'Inventory tracking with automatic reorder alerts',
+      'Dietary restriction and allergy management',
+      'Production scheduling and batch tracking',
+      'Distribution and delivery tracking',
+      'Nutritional analysis and reporting',
+      'User management and role-based access control',
+      'Multi-language support',
+      'Mobile-responsive design',
+      'Integration with existing ERP systems'
+    ],
+    userExperience: 'Administrators can create menus based on nutritional guidelines and user preferences, manage inventory levels, track dietary requirements, schedule production, and monitor distribution. End-users (such as students or patients) can view menus, provide feedback, and report issues through a user-friendly interface.',
+    technicalImplementation: 'Laravel monolith with Blade templating for server-side rendering, Tailwind CSS for responsive UI, MySQL for data storage, and RESTful APIs for mobile and external integrations. The system uses Laravel Sanctum for API authentication, Laravel Echo for real-time updates, and Laravel Queue for background processing tasks such as report generation.',
+    challenges: [
+      'Ensuring accurate nutritional tracking and compliance with dietary regulations',
+      'Managing complex supply chains and perishable inventory',
+      'Providing an intuitive interface for users with varying technical skills',
+      'Handling peak usage during meal times without performance degradation',
+      'Integrating with diverse existing systems in different institutions'
+    ],
+    solutions: [
+      'Implemented a comprehensive nutritional database with automated calculations',
+      'Used barcode scanning and RFID technology for efficient inventory management',
+      'Applied user-centered design principles with iterative testing and feedback',
+      'Utilized caching and database optimization techniques to handle high traffic',
+      'Created flexible integration adapters and APIs for common ERP and legacy systems'
+    ],
+    outcome: 'Institutions using the system have reported reduced food waste by up to 25%, improved meal preparation efficiency by 30%, and higher satisfaction scores among users regarding meal variety and dietary accommodation.',
+    futureImprovements: [
+      'AI-powered menu optimization based on user preferences, nutritional goals, and cost constraints',
+      'Integration with wearable health devices for personalized dietary recommendations',
+      'Blockchain-based supply chain transparency for food safety tracking',
+      'Voice-enabled interface for hands-free operation in kitchen environments',
+      'Predictive analytics for demand forecasting and inventory optimization'
+    ]
+  },
+  {
+    id: 'study-master',
+    title: 'Study Master',
+    shortDescription: 'A comprehensive study management and learning platform',
+    overview: 'An integrated study management platform designed to help students organize coursework, track progress, collaborate with peers, and access learning resources efficiently.',
+    category: 'Educational Technology Platform',
+    technologies: [
+      'React',
+      'TypeScript',
+      'Node.js',
+      'PostgreSQL',
+      'Tailwind CSS'
+    ],
+    image: '/assets/projects/studymaster.png',
+    status: 'Production',
+    featured: false,
+    githubUrl: 'https://github.com/tamimzia7/study-master',
+    liveUrl: 'https://studymaster.example.com',
+    // Case study content
+    problem: 'Students often struggle to manage multiple courses, assignments, deadlines, and study materials effectively, leading to missed deadlines, inefficient study habits, and increased stress.',
+    goal: 'To create a unified platform that consolidates course management, task tracking, resource sharing, and collaborative learning to improve academic outcomes and reduce student stress.',
+    solution: 'Developed a web and mobile application featuring course dashboards, assignment tracking, resource libraries, study group collaboration, progress analytics, and integration with institutional learning management systems.',
+    keyFeatures: [
+      'Course dashboard with overview of upcoming deadlines and recent activity',
+      'Assignment and task management with reminders and prioritization',
+      'Centralized resource library for lecture notes, readings, and multimedia',
+      'Study group creation and collaboration tools (shared notes, whiteboard, chat)',
+      'Progress tracking and analytics with visual performance indicators',
+      'Integration with calendar applications and institutional LMS platforms',
+      'Mobile applications for iOS and Android with offline access',
+      'Accessibility features for diverse learning needs',
+      'Customizable notifications and alerts',
+      'Secure authentication and data privacy controls'
+    ],
+    userExperience: 'Students can view all their courses in a single dashboard, track assignments and deadlines, access study materials, collaborate with peers in study groups, and monitor their academic progress over time. The platform adapts to individual learning patterns and provides personalized suggestions for improvement.',
+    technicalImplementation: 'React frontend with TypeScript for state management and API communication, Node.js/Express backend with PostgreSQL database, and Tailwind CSS for responsive design. The platform uses JWT for authentication, WebSocket for real-time collaboration features, and Redis for caching frequently accessed data.',
+    challenges: [
+      'Balancing feature richness with simplicity and ease of use',
+      'Ensuring data security and privacy for sensitive educational information',
+      'Handling concurrent collaboration features without conflicts or data loss',
+      'Providing reliable offline functionality with seamless synchronization',
+      'Meeting diverse accessibility requirements and internationalization needs'
+    ],
+    solutions: [
+      'Applied progressive disclosure techniques to show advanced features only when needed',
+      'Implemented end-to-end encryption for sensitive data and regular security audits',
+      'Used operational transformation algorithms for real-time collaborative editing',
+      'Created a synchronization queue with conflict resolution strategies for offline changes',
+      'Followed WCAG 2.1 guidelines and provided multi-language support from launch'
+    ],
+    outcome: 'Institutions adopting Study Master have reported a 20% increase in on-time assignment submission, a 15% improvement in average grades, and a 30% reduction in reported student stress related to academic workload management.',
+    futureImprovements: [
+      'AI-powered tutoring and personalized learning path recommendations',
+      'Virtual reality integration for immersive educational experiences and simulations',
+      'Blockchain-based credential verification and micro-certification system',
+      'Gamification elements to increase engagement and motivation',
+      'Integration with emerging educational standards and competency frameworks'
+    ]
   }
 ];

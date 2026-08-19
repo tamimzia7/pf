@@ -5,25 +5,24 @@ interface ProjectCardProps {
     id: string;
     title: string;
     shortDescription: string;
-    overview: string;
+    description: string;
     category: string;
     technologies: string[];
+    role: string;
+    problem: string;
+    solution: string;
+    architecture: string;
+    features: string[];
+    challenges: string[];
+    solutions: string[];
+    testing: string;
+    security: string;
+    businessImpact: string;
+    githubUrl?: string;
+    liveUrl?: string;
     image: string;
     status?: string;
     featured?: boolean;
-    githubUrl?: string;
-    liveUrl?: string;
-    // Case study fields
-    problem: string;
-    goal: string;
-    solution: string;
-    keyFeatures: string[];
-    userExperience: string;
-    technicalImplementation: string;
-    challenges: string[];
-    solutions: string[];
-    outcome: string;
-    futureImprovements: string[];
   };
   featured?: boolean;
   onProjectSelect?: (project: ProjectCardProps['project']) => void;
@@ -55,7 +54,6 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, featured = fa
       onKeyDown={handleProjectKeyDown}
     >
       <img
-        loading="lazy"
         src={project.image}
         alt={project.title}
         className={`w-full ${imageHeight} object-cover rounded-t-lg transition-transform duration-300`}
