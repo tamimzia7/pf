@@ -8,7 +8,7 @@ interface MobileHeaderProps {
 
 export const MobileHeader: React.FC<MobileHeaderProps> = ({ isMenuOpen, onToggleMenu }) => {
   return (
-    <header className="lg:hidden fixed top-0 left-0 right-0 z-50 flex h-14 items-center justify-between px-4 bg-background border-b border-border">
+    <header className="lg:hidden fixed top-0 left-0 right-0 z-[1000] flex h-14 items-center justify-between px-4 bg-white border-b border-border">
       <div className="flex items-center gap-2 min-w-0">
         <div className="h-8 w-8 overflow-hidden rounded-md flex-shrink-0">
           <img

@@ -4,7 +4,7 @@ import { socialLinks } from '@/data/links'
 
 export const Hero: React.FC = () => {
   return (
-    <section id="home" className="pt-20 lg:pt-24">
+    <section id="home" className="relative z-[1] pt-20 lg:pt-24">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex flex-col lg:flex-row lg:items-center lg:gap-12">
           {/* Text Content */}
