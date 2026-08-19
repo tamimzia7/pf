@@ -22,7 +22,7 @@ export interface ResumeData {
 }
 
 export const resumeData: ResumeData = {
-  summary: "Tamim Zia is a Full Stack Laravel Developer focused on building web applications, backend systems, APIs, databases and business-oriented software solutions.",
+  summary: "CSE student and Laravel-focused web developer with experience building web applications, backend systems, REST APIs, and database-driven solutions using Laravel, PHP, MySQL, Blade, and Tailwind CSS.",
   experience: [
     {
       id: 'exp1',

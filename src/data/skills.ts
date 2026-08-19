@@ -23,10 +23,14 @@ export const skillCategories: SkillCategory[] = [
   {
     id: 'laravel-php',
     title: 'Laravel / PHP Development',
-    description: 'Building server-side applications and APIs using Laravel and PHP ecosystem.',
+    description: 'Building server-side applications, APIs and web systems using Laravel, PHP, Blade, and the Laravel ecosystem.',
     technologies: [
       'Laravel',
-      'PHP'
+      'PHP',
+      'Blade',
+      'MySQL',
+      'REST API',
+      'Tailwind CSS'
     ]
   },
   {
@@ -96,9 +100,9 @@ export const skillCategories: SkillCategory[] = [
 // Core Stack - Primary technologies that receive stronger visual emphasis
 export const coreStack: string[] = [
   'Laravel',
-  'React',
-  'TypeScript',
-  'Node.js',
-  'Express.js',
-  'MongoDB'
+  'PHP',
+  'MySQL',
+  'REST API',
+  'Blade',
+  'Tailwind CSS'
 ];

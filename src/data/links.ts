@@ -1,4 +1,4 @@
-import { GitFork, Briefcase, Mail } from 'lucide-react'
+import { GitFork, Briefcase, Mail, Phone } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 
 export interface NavigationLink {
@@ -41,6 +41,11 @@ export const socialLinks: SocialLink[] = [
     platform: 'Email',
     url: 'mailto:tamimziaweb27@gmail.com',
     icon: Mail,
+  },
+  {
+    platform: 'Phone',
+    url: 'tel:+8801955719677',
+    icon: Phone,
   },
 ]
 
