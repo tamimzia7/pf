@@ -21,6 +21,8 @@ export interface Project {
   solutions: string[];
   outcome: string;
   futureImprovements: string[];
+  // Additional screenshots for gallery (optional)
+  screenshots?: string[];
 }
 
 export const projects: Project[] = [
@@ -37,7 +39,7 @@ export const projects: Project[] = [
       'Blade',
       'Tailwind CSS'
     ],
-    image: '/assets/projects/astha.webp',
+    image: '/as1.png',
     status: 'Production',
     featured: true,
     githubUrl: 'https://github.com/tamimzia7/astha',
@@ -81,6 +83,11 @@ export const projects: Project[] = [
       'Expansion to additional service categories such as pet care and tutoring',
       'Subscription-based service plans for recurring maintenance needs',
       'Advanced analytics dashboard for predictive demand forecasting'
+    ],
+    // Screenshots for gallery
+    screenshots: [
+      '/as2.png',
+      '/as3.png'
     ]
   },
   {
@@ -97,7 +104,7 @@ export const projects: Project[] = [
       'Tailwind CSS',
       'Alpine.js'
     ],
-    image: '/assets/projects/visicore.webp',
+    image: '/vs1.png',
     status: 'Production',
     featured: false,
     githubUrl: 'https://github.com/tamimzia7/visicore',
@@ -141,6 +148,10 @@ export const projects: Project[] = [
       'Multi-language support for international organizations',
       'IoT integration for smart building capabilities',
       'Advanced AI insights for visitor behavior prediction'
+    ],
+    // Screenshots for gallery
+    screenshots: [
+      '/vs2.png'
     ]
   },
   {
@@ -155,7 +166,7 @@ export const projects: Project[] = [
       'JavaScript',
       'PHP'
     ],
-    image: '/assets/projects/naw-boutique.webp',
+    image: '/bp1.png',
     status: 'Completed',
     featured: false,
     githubUrl: 'https://github.com/tamimzia7/naw-boutique',
@@ -199,72 +210,17 @@ export const projects: Project[] = [
       'Subscription box service for curated fashion deliveries',
       'Integration with social commerce platforms for direct Instagram/Facebook sales',
       'Sustainability tracking and eco-friendly product highlighting'
-    ]
-  },
-  {
-    id: 'meal-management-system',
-    title: 'Meal Management System',
-    shortDescription: 'A system for managing meal planning, preparation, and distribution',
-    overview: 'A comprehensive meal management system designed to streamline meal planning, preparation, and distribution for institutions such as schools, hospitals, and corporate cafeterias.',
-    category: 'Meal Management Software',
-    technologies: [
-      'Laravel',
-      'PHP',
-      'MySQL',
-      'Blade',
-      'Tailwind CSS'
     ],
-    image: '/assets/projects/mealsystem.png',
-    status: 'Production',
-    featured: false,
-    githubUrl: 'https://github.com/tamimzia7/meal-management-system',
-    liveUrl: 'https://mealmanagementsystem.example.com',
-    // Case study content
-    problem: 'Institutions face challenges in managing meal planning, dietary restrictions, inventory, and distribution efficiently, leading to waste, increased costs, and dissatisfaction among users.',
-    goal: 'To develop a centralized system that automates meal planning, tracks inventory, manages dietary requirements, and streamlines distribution to improve efficiency and user satisfaction.',
-    solution: 'Built a web-based meal management system featuring menu planning, inventory management, dietary tracking, production scheduling, and distribution tracking with reporting capabilities.',
-    keyFeatures: [
-      'Menu planning and recipe management',
-      'Inventory tracking with automatic reorder alerts',
-      'Dietary restriction and allergy management',
-      'Production scheduling and batch tracking',
-      'Distribution and delivery tracking',
-      'Nutritional analysis and reporting',
-      'User management and role-based access control',
-      'Multi-language support',
-      'Mobile-responsive design',
-      'Integration with existing ERP systems'
-    ],
-    userExperience: 'Administrators can create menus based on nutritional guidelines and user preferences, manage inventory levels, track dietary requirements, schedule production, and monitor distribution. End-users (such as students or patients) can view menus, provide feedback, and report issues through a user-friendly interface.',
-    technicalImplementation: 'Laravel monolith with Blade templating for server-side rendering, Tailwind CSS for responsive UI, MySQL for data storage, and RESTful APIs for mobile and external integrations. The system uses Laravel Sanctum for API authentication, Laravel Echo for real-time updates, and Laravel Queue for background processing tasks such as report generation.',
-    challenges: [
-      'Ensuring accurate nutritional tracking and compliance with dietary regulations',
-      'Managing complex supply chains and perishable inventory',
-      'Providing an intuitive interface for users with varying technical skills',
-      'Handling peak usage during meal times without performance degradation',
-      'Integrating with diverse existing systems in different institutions'
-    ],
-    solutions: [
-      'Implemented a comprehensive nutritional database with automated calculations',
-      'Used barcode scanning and RFID technology for efficient inventory management',
-      'Applied user-centered design principles with iterative testing and feedback',
-      'Utilized caching and database optimization techniques to handle high traffic',
-      'Created flexible integration adapters and APIs for common ERP and legacy systems'
-    ],
-    outcome: 'Institutions using the system have reported reduced food waste by up to 25%, improved meal preparation efficiency by 30%, and higher satisfaction scores among users regarding meal variety and dietary accommodation.',
-    futureImprovements: [
-      'AI-powered menu optimization based on user preferences, nutritional goals, and cost constraints',
-      'Integration with wearable health devices for personalized dietary recommendations',
-      'Blockchain-based supply chain transparency for food safety tracking',
-      'Voice-enabled interface for hands-free operation in kitchen environments',
-      'Predictive analytics for demand forecasting and inventory optimization'
-    ]
-  },
+    // Screenshots for gallery
+    screenshots: [
+      '/bp2.png',
+      '/bp3.png'
+    ]  },
   {
     id: 'study-master',
-    title: 'Study Master',
-    shortDescription: 'A comprehensive study management and learning platform',
-    overview: 'An integrated study management platform designed to help students organize coursework, track progress, collaborate with peers, and access learning resources efficiently.',
+    title: 'AI Study Planner / Routine App',
+    shortDescription: 'AI-powered study planner and daily routine management application',
+    overview: 'An AI-powered study planner and routine management app designed to help students organize coursework, build effective study schedules, track progress, and maintain balanced daily routines for improved academic performance.',
     category: 'Educational Technology Platform',
     technologies: [
       'React',
@@ -273,7 +229,7 @@ export const projects: Project[] = [
       'PostgreSQL',
       'Tailwind CSS'
     ],
-    image: '/assets/projects/studymaster.png',
+    image: '/sp1.png',
     status: 'Production',
     featured: false,
     githubUrl: 'https://github.com/tamimzia7/study-master',
@@ -281,20 +237,20 @@ export const projects: Project[] = [
     // Case study content
     problem: 'Students often struggle to manage multiple courses, assignments, deadlines, and study materials effectively, leading to missed deadlines, inefficient study habits, and increased stress.',
     goal: 'To create a unified platform that consolidates course management, task tracking, resource sharing, and collaborative learning to improve academic outcomes and reduce student stress.',
-    solution: 'Developed a web and mobile application featuring course dashboards, assignment tracking, resource libraries, study group collaboration, progress analytics, and integration with institutional learning management systems.',
+    solution: 'Developed a web and mobile application featuring AI-powered study planning, course dashboards, assignment tracking, resource libraries, routine management, progress analytics, and integration with institutional learning management systems.',
     keyFeatures: [
+      'AI-powered study schedule generation based on deadlines and priorities',
       'Course dashboard with overview of upcoming deadlines and recent activity',
       'Assignment and task management with reminders and prioritization',
       'Centralized resource library for lecture notes, readings, and multimedia',
       'Study group creation and collaboration tools (shared notes, whiteboard, chat)',
       'Progress tracking and analytics with visual performance indicators',
-      'Integration with calendar applications and institutional LMS platforms',
+      'Daily routine planner with customizable time blocks',
       'Mobile applications for iOS and Android with offline access',
-      'Accessibility features for diverse learning needs',
       'Customizable notifications and alerts',
       'Secure authentication and data privacy controls'
     ],
-    userExperience: 'Students can view all their courses in a single dashboard, track assignments and deadlines, access study materials, collaborate with peers in study groups, and monitor their academic progress over time. The platform adapts to individual learning patterns and provides personalized suggestions for improvement.',
+    userExperience: 'Students can view all their courses in a single dashboard, generate AI-powered study schedules, track assignments and deadlines, manage daily routines, access study materials, collaborate with peers in study groups, and monitor their academic progress over time. The platform adapts to individual learning patterns and provides personalized suggestions for improvement.',
     technicalImplementation: 'React frontend with TypeScript for state management and API communication, Node.js/Express backend with PostgreSQL database, and Tailwind CSS for responsive design. The platform uses JWT for authentication, WebSocket for real-time collaboration features, and Redis for caching frequently accessed data.',
     challenges: [
       'Balancing feature richness with simplicity and ease of use',
@@ -310,13 +266,69 @@ export const projects: Project[] = [
       'Created a synchronization queue with conflict resolution strategies for offline changes',
       'Followed WCAG 2.1 guidelines and provided multi-language support from launch'
     ],
-    outcome: 'Institutions adopting Study Master have reported a 20% increase in on-time assignment submission, a 15% improvement in average grades, and a 30% reduction in reported student stress related to academic workload management.',
+    outcome: 'Students using the AI Study Planner reported a 20% increase in on-time assignment submission, a 15% improvement in average grades, and a 30% reduction in reported stress related to academic workload management.',
     futureImprovements: [
       'AI-powered tutoring and personalized learning path recommendations',
       'Virtual reality integration for immersive educational experiences and simulations',
       'Blockchain-based credential verification and micro-certification system',
       'Gamification elements to increase engagement and motivation',
       'Integration with emerging educational standards and competency frameworks'
+    ]
+  },
+  {
+    id: 'personal-portfolio',
+    title: 'Personal Portfolio Website',
+    shortDescription: 'A modern, responsive personal portfolio website',
+    overview: 'A modern, responsive personal portfolio website built to showcase projects, skills, and professional experience with a clean design and smooth user experience.',
+    category: 'Frontend Portfolio',
+    technologies: [
+      'React',
+      'TypeScript',
+      'Tailwind CSS',
+      'Vite'
+    ],
+    image: '/sp1.png',
+    status: 'Live',
+    featured: false,
+    // Case study content
+    problem: 'Having a strong online presence is essential for developers, but creating a portfolio that effectively showcases work, skills, and experience in a visually appealing and maintainable way can be challenging.',
+    goal: 'To build a fast, responsive, and visually polished personal portfolio that highlights projects, technical skills, and professional background while providing an excellent user experience across all devices.',
+    solution: 'Developed a single-page portfolio application featuring smooth scrolling sections, responsive design, project case studies with detailed breakdowns, skill visualizations, and contact integration.',
+    keyFeatures: [
+      'Fully responsive design optimized for mobile, tablet, and desktop',
+      'Smooth scrolling single-page navigation',
+      'Project case study modals with detailed breakdowns',
+      'Dynamic skill and technology visualizations',
+      'Contact form with email integration',
+      'Fast load times with optimized assets and lazy loading',
+      'Dark/light theme support',
+      'Accessible and SEO-friendly markup',
+      'Clean component-based architecture',
+      'Easy to extend and maintain'
+    ],
+    userExperience: 'Visitors can seamlessly navigate through sections, explore detailed project case studies, view technical skills and expertise, and get in touch through a streamlined contact form. The portfolio adapts fluidly to any screen size.',
+    technicalImplementation: 'React with TypeScript for type-safe component development, Tailwind CSS for utility-first styling, and Vite for fast development and optimized production builds. The application uses a modular component architecture for maintainability.',
+    challenges: [
+      'Achieving a consistent design across all screen sizes and devices',
+      'Optimizing performance while maintaining rich visual interactions',
+      'Presenting project information in a clear and engaging format',
+      'Ensuring accessibility compliance across the entire site',
+      'Keeping the build output small and fast-loading'
+    ],
+    solutions: [
+      'Implemented a mobile-first responsive design strategy with Tailwind CSS breakpoints',
+      'Used lazy loading, code splitting, and optimized image formats for performance',
+      'Designed reusable card and modal components for consistent project presentation',
+      'Followed WCAG 2.1 guidelines with semantic HTML, ARIA labels, and keyboard navigation',
+      'Configured Vite for optimized production builds with minimal bundle size'
+    ],
+    outcome: 'The portfolio website achieves a 95+ Lighthouse performance score, loads in under 2 seconds, and provides a professional online presence that effectively showcases development work and expertise.',
+    futureImprovements: [
+      'Blog section with Markdown-based content management',
+      'Dark mode toggle with system preference detection',
+      'Multi-language support for international audiences',
+      'Analytics dashboard for tracking visitor engagement',
+      'Integration with GitHub API for automatic project updates'
     ]
   }
 ];

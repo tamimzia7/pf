@@ -1,30 +1,8 @@
 import React, { useEffect } from 'react';
+import type { Project } from '@/data/projects';
 
 interface CaseStudyModalProps {
-  project: {
-    id: string;
-    title: string;
-    shortDescription: string;
-    overview: string;
-    category: string;
-    technologies: string[];
-    image: string;
-    status?: string;
-    featured?: boolean;
-    githubUrl?: string;
-    liveUrl?: string;
-    // Case study fields
-    problem: string;
-    goal: string;
-    solution: string;
-    keyFeatures: string[];
-    userExperience: string;
-    technicalImplementation: string;
-    challenges: string[];
-    solutions: string[];
-    outcome: string;
-    futureImprovements: string[];
-  };
+  project: Project;
   isOpen: boolean;
   onClose: () => void;
 }
@@ -104,7 +82,23 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
               <p className="text-secondary-text">{project.solution}</p>
             </div>
 
-            {/* Key Features & User Experience */}
+            {/* Screenshots Gallery */}
+             {project.screenshots && project.screenshots.length > 0 ? (
+               <div className="space-y-4">
+                 <h3 className="text-2xl font-semibold text-main-text">Screenshots</h3>
+                 <div className="grid gap-4 lg:grid-cols-2">
+                   {project.screenshots.map((src, index) => (
+                     <img
+                       key={index}
+                       src={src}
+                       alt={`${project.title} screenshot ${index + 1}`}
+                       className="w-full h-64 object-cover rounded-lg"
+                     />
+                   ))}
+                 </div>
+               </div>
+             ) : null}
+             {/* Key Features & User Experience */}
             <div className="grid gap-6 lg:grid-cols-2">
               <div className="space-y-4">
                 <h3 className="text-xl font-semibold text-main-text">Key Features</h3>

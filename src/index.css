@@ -46,6 +46,14 @@ body {
   box-shadow: 0 12px 24px -12px rgba(17, 24, 39, 0.15);
 }
 
+/* Image content scale on hover */
+.image-content {
+  transition: transform 0.25s ease;
+}
+.card-hover:hover .image-content {
+  transform: scale(1.03);
+}
+
 /* Subtle fade-in + slide-up on mount */
 @keyframes fade-in-up {
   from {

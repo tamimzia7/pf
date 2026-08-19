@@ -40,16 +40,6 @@ export const skillCategories: SkillCategory[] = [
     ]
   },
   {
-    id: 'cyber-security',
-    title: 'Cyber Security',
-    description: 'Protecting applications and data through secure coding practices and security awareness.',
-    technologies: [
-      'Application Security',
-      'Secure Software Development',
-      'Security Awareness'
-    ]
-  },
-  {
     id: 'backend',
     title: 'Backend Development',
     description: 'Designing and implementing server-side logic, APIs, and system architecture.',
@@ -99,18 +89,6 @@ export const skillCategories: SkillCategory[] = [
       'Reusable Components',
       'Error Handling',
       'Validation'
-    ]
-  },
-  {
-    id: 'automation',
-    title: 'Automation & AI',
-    description: 'Building intelligent workflows and automating repetitive tasks with AI-powered tools.',
-    technologies: [
-      'AI Automation',
-      'Webhooks',
-      'API-based Automation',
-      'AI Agents',
-      'Workflow Automation'
     ]
   }
 ];

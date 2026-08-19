@@ -1,32 +1,10 @@
 import TechnologyBadge from './TechnologyBadge';
+import type { Project } from '@/data/projects';
 
 interface ProjectCardProps {
-  project: {
-    id: string;
-    title: string;
-    shortDescription: string;
-    overview: string;
-    category: string;
-    technologies: string[];
-    image: string;
-    status?: string;
-    featured?: boolean;
-    githubUrl?: string;
-    liveUrl?: string;
-    // Case study fields
-    problem: string;
-    goal: string;
-    solution: string;
-    keyFeatures: string[];
-    userExperience: string;
-    technicalImplementation: string;
-    challenges: string[];
-    solutions: string[];
-    outcome: string;
-    futureImprovements: string[];
-  };
+  project: Project;
   featured?: boolean;
-  onProjectSelect?: (project: ProjectCardProps['project']) => void;
+  onProjectSelect?: (project: Project) => void;
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({ project, featured = false, onProjectSelect }) => {
@@ -54,15 +32,14 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, featured = fa
       onClick={handleProjectClick}
       onKeyDown={handleProjectKeyDown}
     >
-      <img
-        loading="lazy"
-        src={project.image}
-        alt={project.title}
-        className={`w-full ${imageHeight} object-cover rounded-t-lg transition-transform duration-300`}
-        style={{ transform: 'scale(1)' }}
-        onMouseEnter={(e) => { e.currentTarget.style.transform = 'scale(1.03)'; }}
-        onMouseLeave={(e) => { e.currentTarget.style.transform = 'scale(1)'; }}
-      />
+      <div className="image-content">
+        <img
+          loading="lazy"
+          src={project.image}
+          alt={project.title}
+          className={`w-full ${imageHeight} object-cover rounded-t-lg`}
+        />
+      </div>
       <div className="p-5">
         <span className="mb-2 inline-block px-2 py-0.5 text-xs font-medium text-primary bg-primary/10 rounded">
           {project.category}

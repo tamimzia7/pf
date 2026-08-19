@@ -1,4 +1,4 @@
-import { Code2, Server, LayoutDashboard, Database, Plug, Bot } from 'lucide-react'
+import { Code2, Server, LayoutDashboard, Database, Plug } from 'lucide-react'
 
 export interface Service {
   id: string;
@@ -82,20 +82,6 @@ export const services: Service[] = [
       'Third-party Integrations',
       'Authentication',
       'Data Mapping'
-    ],
-    featured: false
-  },
-  {
-    id: 'ai-automation',
-    title: 'AI & Automation',
-    description: 'Build practical AI-powered automation workflows, integrate AI agents and automate repetitive tasks.',
-    Icon: Bot,
-    technologies: [
-      'AI Agent',
-      'Webhooks',
-      'APIs',
-      'Automation Workflow',
-      'Process Automation'
     ],
     featured: false
   }

@@ -11,9 +11,12 @@ export const Sidebar: React.FC<SidebarProps> = ({ activeId }) => {
       <div className="p-6 lg:p-8 h-full overflow-y-auto">
         {/* Profile */}
         <div className="mb-8">
-          <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary-light">
-            {/* Placeholder for profile image - using initials */}
-            <span className="text-primary text-xl font-bold">TZ</span>
+          <div className="h-12 w-12 overflow-hidden rounded-lg">
+            <img
+              src="/profile.png"
+              alt="Tamim Zia"
+              className="h-full w-full object-cover"
+            />
           </div>
           <h2 className="mt-4 text-2xl font-bold text-main-text">Tamim Zia</h2>
           <p className="mt-2 text-secondary-text">Full Stack Developer</p>

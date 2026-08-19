@@ -63,10 +63,11 @@ export const Hero: React.FC = () => {
           {/* Profile Image Placeholder */}
           <div className="lg:w-1/2 lg:flex lg:justify-center lg:items-center mt-8 lg:mt-0">
             <div className="h-72 w-72 rounded-xl border border-background overflow-hidden">
-              {/* Placeholder for image - using a gradient background */}
-              <div className="h-full w-full bg-gradient-to-br from-primary via-primary-light to-primary/20 flex items-center justify-center">
-                <span className="text-primary text-4xl font-bold">TZ</span>
-              </div>
+              <img
+                src="/profile.png"
+                alt="Tamim Zia"
+                className="h-full w-full object-cover"
+              />
             </div>
           </div>
         </div>

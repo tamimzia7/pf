@@ -1,4 +1,4 @@
-import { Code2, Server, LayoutDashboard, Database, Plug, Bot } from 'lucide-react'
+import { Code2, Server, LayoutDashboard, Database, Plug } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 
 export interface Capability {
@@ -38,11 +38,5 @@ export const capabilities: Capability[] = [
     title: 'API Integration',
     description: 'Connect applications with third-party APIs, webhooks and external services.',
     icon: Plug,
-  },
-  {
-    id: 'ai-automation',
-    title: 'AI & Automation',
-    description: 'Build practical automation workflows using APIs, webhooks and AI-powered tools.',
-    icon: Bot,
   },
 ]
