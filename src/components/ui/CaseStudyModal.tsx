@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 interface CaseStudyModalProps {
   project: {
@@ -32,11 +32,25 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
   isOpen,
   onClose
 }) => {
+  useEffect(() => {
+    if (isOpen) {
+      const handleKeyDown = (e: KeyboardEvent) => {
+        if (e.key === 'Escape') {
+          onClose();
+        }
+      };
+      window.addEventListener('keydown', handleKeyDown);
+      return () => {
+        window.removeEventListener('keydown', handleKeyDown);
+      };
+    }
+  }, [isOpen, onClose]);
+
   if (!isOpen) return null;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
-      <div className="relative bg-background rounded-lg shadow-xl w-full max-w-4xl mx-4 h-full max-h-[90vh] overflow-hidden">
+      <div role="dialog" aria-modal="true" className="relative bg-background rounded-lg shadow-xl w-full max-w-4xl mx-4 h-full max-h-[90vh] overflow-hidden">
         {/* Close Button */}
         <button
           onClick={onClose}

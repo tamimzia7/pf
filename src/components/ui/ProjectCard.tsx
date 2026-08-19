@@ -38,10 +38,20 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, featured = fa
     }
   };
 
+  const handleProjectKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      handleProjectClick();
+    }
+  };
+
   return (
     <div 
       className={`card card-hover relative overflow-hidden cursor-pointer ${featured ? 'shadow-lg' : ''}`}
+      role="button"
+      tabIndex={0}
       onClick={handleProjectClick}
+      onKeyDown={handleProjectKeyDown}
     >
       <img
         src={project.image}

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Sidebar } from './Sidebar'
 import { MobileHeader } from './MobileHeader'
 import { Navigation } from './Navigation'
-import { navigationLinks, hireMeText } from '@/data/links'
+import { navigationLinks, hireMeText, socialLinks } from '@/data/links'
 
 interface PortfolioLayoutProps {
   children: React.ReactNode
@@ -53,12 +53,12 @@ export const PortfolioLayout: React.FC<PortfolioLayoutProps> = ({ children }) =>
   const closeMenu = () => setIsMenuOpen(false)
 
   return (
-    <div className="relative min-h-screen">
+    <div className="relative min-h-screen flex flex-col">
       {/* Sidebar - Desktop only */}
       <Sidebar activeId={activeNavId} />
 
       {/* Main content */}
-      <main className={`lg:ml-64 lg:p-12 p-6 pt-4 lg:pt-0`}>
+      <main className={`flex-1 lg:ml-64 lg:p-12 p-6 pt-4 lg:pt-0`}>
         {/* Mobile Header - Mobile only */}
         <MobileHeader
           isMenuOpen={isMenuOpen}
@@ -92,6 +92,38 @@ export const PortfolioLayout: React.FC<PortfolioLayoutProps> = ({ children }) =>
           {children}
         </div>
       </main>
+
+      {/* Footer */}
+      <footer className="border-t border-border/50">
+        <div className="container mx-auto px-4 lg:px-8 py-12">
+          <div className="text-center space-y-6">
+            <div className="space-y-2">
+              <h3 className="text-xl font-bold text-main-text">Tamim Zia</h3>
+              <p className="text-secondary-text">Full Stack Developer</p>
+            </div>
+            <p className="text-secondary-text max-w-2xl mx-auto">
+              Building software that solves real problems.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              {socialLinks.map((link) => (
+                <a
+                  key={link.platform}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-secondary-text hover:text-primary transition-colors"
+                >
+                  {link.icon && <link.icon className="h-4 w-4" aria-hidden="true" />}
+                  <span>{link.platform}</span>
+                </a>
+              ))}
+            </div>
+            <p className="text-xs text-muted-text">
+              © {new Date().getFullYear()} Tamim Zia. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
   )
 }
