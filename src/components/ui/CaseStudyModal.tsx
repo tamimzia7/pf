@@ -46,7 +46,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
         <div className="h-full overflow-y-auto">
           {/* Case Study Header */}
           <div className="relative h-36 sm:h-48 w-full bg-gradient-to-br from-primary/10 to-transparent">
-            <div className="absolute inset-0 bg-[url('${project.image}')] bg-cover bg-center opacity-20"></div>
+            <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{ backgroundImage: `url('${project.image}')` }}></div>
             <div className="relative z-10 flex flex-col items-center justify-center pt-16 pb-8">
               <span className="mb-2 inline-block px-3 py-1 text-xs font-medium text-primary bg-primary/10 rounded">
                 {project.category}
