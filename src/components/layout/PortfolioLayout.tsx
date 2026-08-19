@@ -72,7 +72,7 @@ export const PortfolioLayout: React.FC<PortfolioLayoutProps> = ({ children }) =>
               <h2 className="text-2xl font-bold text-main-text">Tamim Zia</h2>
               <p className="mt-2 text-secondary-text">Full Stack Developer</p>
             </div>
-            <Navigation className="space-y-4" activeId={activeNavId} />
+            <Navigation className="space-y-4" activeId={activeNavId} onNavigate={closeMenu} />
             <button
               onClick={closeMenu}
               className="mt-8 w-full btn-secondary"
@@ -80,7 +80,7 @@ export const PortfolioLayout: React.FC<PortfolioLayoutProps> = ({ children }) =>
               Close Menu
             </button>
             <div className="mt-6">
-              <a href="#contact" className="w-full btn-primary">
+              <a href="#contact" onClick={closeMenu} className="w-full btn-primary">
                 {hireMeText}
               </a>
             </div>

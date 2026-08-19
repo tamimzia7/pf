@@ -4,9 +4,10 @@ import { navigationLinks } from '@/data/links'
 interface NavigationProps {
   className?: string
   activeId?: string | null
+  onNavigate?: () => void
 }
 
-export const Navigation: React.FC<NavigationProps> = ({ className, activeId }) => {
+export const Navigation: React.FC<NavigationProps> = ({ className, activeId, onNavigate }) => {
   return (
     <nav className={`${className} space-y-2`} aria-label="Primary">
       {navigationLinks.map((nav) => {
@@ -16,6 +17,7 @@ export const Navigation: React.FC<NavigationProps> = ({ className, activeId }) =
             key={nav.id}
             href={nav.url}
             aria-current={isActive ? 'page' : undefined}
+            onClick={onNavigate}
             className={`block px-4 py-3 rounded-md transition-colors ${
               isActive
                 ? 'bg-primary text-white'
