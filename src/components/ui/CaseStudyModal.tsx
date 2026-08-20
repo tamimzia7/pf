@@ -37,7 +37,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
           onClick={() => {
             onClose();
           }}
-          className="absolute top-3 right-3 sm:top-4 sm:right-4 text-secondary-text hover:text-primary transition-colors z-20"
+          className="case-study-close absolute top-3 right-3 sm:top-4 sm:right-4 z-20"
           aria-label="Close case study"
         >
           ×

@@ -50,6 +50,13 @@ body {
     text-align: center;
     display: inline-block;
   }
+  .case-study-close {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    min-height: 36px;
+    font-size: 18px;
+  }
 }
 
 /* Component styles */
@@ -102,6 +109,12 @@ body {
   .fade-in-up {
     animation: none;
   }
+  .case-study-close {
+    transition: none;
+  }
+  .case-study-close:hover {
+    transform: none;
+  }
 }
 
 .btn-primary {
@@ -151,6 +164,43 @@ body {
 .btn-secondary:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+}
+
+/* Case study close button - all devices */
+.case-study-close {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #16A34A; /* primary */
+  color: #FFFFFF;
+
+  font-size: 19px;
+  line-height: 1;
+
+  border: none;
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  z-index: 1000;
+
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease,
+    box-shadow 0.2s ease;
+}
+.case-study-close:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px -4px rgba(22, 163, 74, 0.5); /* primary tint */
+}
+.case-study-close:active {
+  transform: scale(0.95);
 }
 
 .link {
