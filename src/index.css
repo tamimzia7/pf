@@ -124,7 +124,11 @@ body {
   border-radius: 0.5rem; /* rounded-md */
   font-weight: 500; /* font-medium */
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 .btn-primary:hover {
   background-color: #15803D; /* primary-dark */
@@ -148,7 +152,12 @@ body {
   border-radius: 0.5rem; /* rounded-md */
   font-weight: 500; /* font-medium */
   cursor: pointer;
-  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 .btn-secondary:hover {
   background-color: #16A34A; /* primary */
@@ -211,9 +220,169 @@ body {
   color: #16A34A; /* primary */
 }
 
-/* Utilities for future */
-.dark-mode-support {
-  @media (prefers-color-scheme: dark) {
-    /* Dark mode styles will go here later */
+/* ==========================================================================
+   Motion layer — animation only, no visual redesign of the existing UI
+   ========================================================================== */
+
+/* Scroll reveal — hidden only when JS is active (html.js-anim) */
+.js-anim .reveal,
+.js-anim .reveal-group > * {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.55s ease,
+    transform 0.55s ease;
+}
+
+.js-anim .reveal.is-visible,
+.js-anim .reveal-group.is-visible > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hero entrance — reuses the existing fade-in-up keyframes */
+.hero-enter {
+  animation: fade-in-up 0.6s ease-out both;
+}
+
+.hero-enter-image {
+  animation: hero-image-in 0.7s ease-out both;
+}
+
+@keyframes hero-image-in {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Case study modal entrance */
+.modal-backdrop {
+  animation: modal-backdrop-in 0.25s ease-out both;
+}
+
+.modal-panel {
+  animation: modal-panel-in 0.35s ease-out both;
+}
+
+@keyframes modal-backdrop-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modal-panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Navigation — smooth active-state transitions only */
+nav a {
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+/* Featured (ASTHA) project card — slightly more polished hover motion */
+.card-featured {
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.card-featured .image-content {
+  transition: transform 0.5s ease;
+}
+
+/* Hover-only effects (pointer devices, motion allowed) */
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .btn-primary:hover,
+  .btn-secondary:hover {
+    transform: translateY(-2px);
+  }
+  .btn-primary:hover {
+    box-shadow: 0 10px 20px -10px rgba(22, 163, 74, 0.5);
+  }
+  .btn-secondary:hover {
+    box-shadow: 0 10px 20px -10px rgba(17, 24, 39, 0.18);
+  }
+
+  nav a:hover {
+    transform: translateX(3px);
+  }
+
+  .card-featured:hover {
+    transform: translateY(-6px);
+    border-color: #86EFAC; /* light green tint */
+    box-shadow: 0 20px 40px -16px rgba(17, 24, 39, 0.25);
+  }
+  .card-featured:hover .image-content {
+    transform: scale(1.04);
+  }
+}
+
+/* Anchor scrolling respects the fixed mobile header */
+section[id] {
+  scroll-margin-top: 5rem;
+}
+
+@media (min-width: 1024px) {
+  section[id] {
+    scroll-margin-top: 1.5rem;
+  }
+}
+
+/* Mobile — shorter reveal distance (kept in sync with the stagger logic) */
+@media (max-width: 767px) {
+  .js-anim .reveal,
+  .js-anim .reveal-group > * {
+    transform: translateY(12px);
+  }
+}
+
+/* Reduced motion — disable non-essential animation, keep content visible */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .js-anim .reveal,
+  .js-anim .reveal-group > * {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .hero-enter,
+  .hero-enter-image,
+  .modal-backdrop,
+  .modal-panel {
+    animation: none;
+  }
+
+  .card-featured,
+  .card-featured .image-content {
+    transition: none;
+  }
+
+  nav a {
+    transition:
+      background-color 0.25s ease,
+      color 0.25s ease;
   }
 }

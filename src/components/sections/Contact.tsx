@@ -41,7 +41,7 @@ export const Contact: React.FC = () => {
     <Section id="contact" className="bg-soft-background py-8 sm:py-12 lg:py-16">
       <div className="container mx-auto px-4 lg:px-8">
         {/* Heading */}
-        <div className="fade-in-up mb-6 sm:mb-8 lg:mb-10">
+        <div className="reveal mb-6 sm:mb-8 lg:mb-10">
           <p className="mb-3 text-sm font-medium uppercase tracking-wider text-primary">
             {sectionLabel}
           </p>
@@ -63,7 +63,7 @@ export const Contact: React.FC = () => {
         )}
 
         {/* Two Column Layout */}
-        <div className="grid gap-8 lg:grid-cols-2">
+        <div className="reveal reveal-group grid gap-8 lg:grid-cols-2" data-stagger="80">
           {/* Contact Information */}
           <div className="space-y-6">
             <h3 className="mb-2 text-lg sm:text-xl font-semibold text-main-text">Contact Information</h3>

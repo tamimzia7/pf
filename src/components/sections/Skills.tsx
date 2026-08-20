@@ -12,7 +12,7 @@ export const Skills: React.FC = () => {
     <Section id="skills" className="bg-soft-background py-8 sm:py-12 lg:py-16">
       <div className="container mx-auto px-4 lg:px-8">
         {/* Heading */}
-        <div className="fade-in-up mb-6 sm:mb-8 lg:mb-10">
+        <div className="reveal mb-6 sm:mb-8 lg:mb-10">
           <p className="mb-3 text-sm font-medium uppercase tracking-wider text-primary">
             {sectionLabel}
           </p>
@@ -25,7 +25,7 @@ export const Skills: React.FC = () => {
         </div>
 
         {/* Core Stack */}
-        <div className="fade-in-up mb-12 lg:mb-16">
+        <div className="reveal mb-12 lg:mb-16">
           <h3 className="mb-4 text-lg sm:text-xl font-semibold text-main-text">
             Core Stack
           </h3>
@@ -42,12 +42,11 @@ export const Skills: React.FC = () => {
         </div>
 
         {/* Skill Categories */}
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="reveal reveal-group grid gap-8 sm:grid-cols-2 lg:grid-cols-3" data-stagger="70">
           {skillCategories.map((category) => (
             <article
               key={category.id}
-              className="card card-hover fade-in-up p-4 sm:p-5 lg:p-6"
-              style={{ animationDelay: `${skillCategories.indexOf(category) * 60}ms` }}
+              className="card card-hover p-4 sm:p-5 lg:p-6"
             >
               <h3 className="mb-4 text-base sm:text-lg font-semibold text-main-text">
                 {category.title}

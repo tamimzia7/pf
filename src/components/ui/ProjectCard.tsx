@@ -26,7 +26,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, featured = fa
 
   return (
     <div 
-      className={`card card-hover relative overflow-hidden cursor-pointer ${featured ? 'shadow-lg' : ''}`}
+      className={`card card-hover relative overflow-hidden cursor-pointer ${featured ? 'shadow-lg card-featured' : ''}`}
       role="button"
       tabIndex={0}
       onClick={handleProjectClick}

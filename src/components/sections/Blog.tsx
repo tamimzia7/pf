@@ -34,7 +34,7 @@ export const Blog: React.FC = () => {
     <Section id="blog" className="bg-soft-background py-8 sm:py-12 lg:py-16">
       <div className="container mx-auto px-4 lg:px-8">
         {/* Heading */}
-        <div className="fade-in-up mb-6 sm:mb-8 lg:mb-10">
+        <div className="reveal mb-6 sm:mb-8 lg:mb-10">
           <p className="mb-3 text-sm font-medium uppercase tracking-wider text-primary">
             {sectionLabel}
           </p>
@@ -47,7 +47,7 @@ export const Blog: React.FC = () => {
         </div>
 
         {/* Featured Topics Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+        <div className="reveal reveal-group grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10" data-stagger="70">
           {topics.map((topic) => {
             const Icon = topic.icon;
             return (
@@ -71,7 +71,7 @@ export const Blog: React.FC = () => {
         </div>
 
         {/* Bottom CTA */}
-        <div className="text-center">
+        <div className="reveal text-center">
           <p className="text-main-text font-medium">
             Articles are currently in progress.
           </p>

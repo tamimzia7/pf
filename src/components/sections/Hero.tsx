@@ -10,28 +10,28 @@ export const Hero: React.FC = () => {
           {/* Text Content */}
           <div className="lg:w-1/2">
             {/* Intro Label */}
-            <div className="mb-4 flex items-center gap-2 text-primary text-sm font-medium uppercase">
+            <div className="hero-enter mb-4 flex items-center gap-2 text-primary text-sm font-medium uppercase">
               WELCOME TO MY PORTFOLIO
             </div>
 
             {/* Name and Role */}
-            <h1 className="mb-2 text-2xl font-bold text-main-text sm:text-3xl lg:text-5xl xl:text-6xl">
+            <h1 className="hero-enter mb-2 text-2xl font-bold text-main-text sm:text-3xl lg:text-5xl xl:text-6xl" style={{ animationDelay: '70ms' }}>
               Hello, I'm{' '}
               <span className="block">
                 Tamim Zia
               </span>
             </h1>
-            <p className="mb-6 text-base font-medium text-main-text lg:text-2xl">
+            <p className="hero-enter mb-6 text-base font-medium text-main-text lg:text-2xl" style={{ animationDelay: '140ms' }}>
               <span className="text-primary">Full Stack Developer</span>
             </p>
 
             {/* Description */}
-            <p className="mb-8 text-secondary-text lg:text-lg leading-relaxed">
+            <p className="hero-enter mb-8 text-secondary-text lg:text-lg leading-relaxed" style={{ animationDelay: '210ms' }}>
               {profile.description}
             </p>
 
             {/* CTAs */}
-            <div className="flex flex-wrap gap-4 mb-6">
+            <div className="hero-enter flex flex-wrap gap-4 mb-6" style={{ animationDelay: '280ms' }}>
               <a href="#projects" className="btn-primary flex-1 lg:flex-none">
                 View My Work
               </a>
@@ -41,7 +41,7 @@ export const Hero: React.FC = () => {
             </div>
 
             {/* Social Links */}
-            <div className="flex flex-wrap gap-4">
+            <div className="hero-enter flex flex-wrap gap-4" style={{ animationDelay: '350ms' }}>
               {socialLinks.map((link) => {
                 const Icon = link.icon
                 return (
@@ -61,7 +61,7 @@ export const Hero: React.FC = () => {
           </div>
 
           {/* Profile Image Placeholder */}
-          <div className="mt-8 flex justify-center lg:mt-0 lg:w-1/2 lg:justify-center lg:items-center">
+          <div className="hero-enter-image mt-8 flex justify-center lg:mt-0 lg:w-1/2 lg:justify-center lg:items-center" style={{ animationDelay: '120ms' }}>
             <div className="h-40 w-40 sm:h-56 sm:w-56 lg:h-72 lg:w-72 rounded-xl border border-background overflow-hidden">
               <img
                 src="/profile.png"

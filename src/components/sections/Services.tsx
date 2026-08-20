@@ -16,7 +16,7 @@ export const Services: React.FC = () => {
     <Section id="services" className="bg-soft-background py-8 sm:py-12 lg:py-16">
       <div className="container mx-auto px-4 lg:px-8">
         {/* Heading */}
-        <div className="fade-in-up mb-6 sm:mb-8 lg:mb-10">
+        <div className="reveal mb-6 sm:mb-8 lg:mb-10">
           <p className="mb-3 text-sm font-medium uppercase tracking-wider text-primary">
             {sectionLabel}
           </p>
@@ -30,7 +30,7 @@ export const Services: React.FC = () => {
 
         {/* Featured Service(s) */}
         {featuredServices.length > 0 && (
-          <div className="mb-12 lg:mb-16">
+          <div className="reveal mb-12 lg:mb-16">
             {featuredServices.map((service) => (
               <ServiceCard
                 key={service.id}
@@ -45,7 +45,7 @@ export const Services: React.FC = () => {
         )}
 
         {/* Regular Services Grid */}
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="reveal reveal-group grid gap-8 sm:grid-cols-2 lg:grid-cols-3" data-stagger="70">
           {regularServices.map((service) => (
             <ServiceCard
               key={service.id}

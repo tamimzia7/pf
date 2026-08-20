@@ -31,7 +31,7 @@ export const Projects: React.FC = () => {
     <Section id="projects" className="bg-soft-background py-8 sm:py-12 lg:py-16">
       <div className="container mx-auto px-4 lg:px-8">
         {/* Heading */}
-        <div className="fade-in-up mb-6 sm:mb-8 lg:mb-10">
+        <div className="reveal mb-6 sm:mb-8 lg:mb-10">
           <p className="mb-3 text-sm font-medium uppercase tracking-wider text-primary">
             {sectionLabel}
           </p>
@@ -45,7 +45,7 @@ export const Projects: React.FC = () => {
 
         {/* Featured Project(s) */}
         {featuredProjects.length > 0 && ( 
-          <div className="mb-12 lg:mb-16">
+          <div className="reveal mb-12 lg:mb-16">
             <div className="space-y-8">
               {featuredProjects.map((project) => (
                 <ProjectCard
@@ -60,7 +60,7 @@ export const Projects: React.FC = () => {
         )}
 
         {/* Regular Projects Grid */}
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="reveal reveal-group grid gap-8 sm:grid-cols-2 lg:grid-cols-3" data-stagger="70">
           {regularProjects.map((project) => (
             <ProjectCard
               key={project.id}

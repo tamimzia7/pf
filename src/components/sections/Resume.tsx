@@ -11,7 +11,7 @@ export const Resume: React.FC = () => {
     <Section id="resume" className="bg-soft-background py-8 sm:py-12 lg:py-16">
       <div className="container mx-auto px-4 lg:px-8">
         {/* Heading */}
-        <div className="fade-in-up mb-6 sm:mb-8 lg:mb-10">
+        <div className="reveal mb-6 sm:mb-8 lg:mb-10">
           <p className="mb-3 text-sm font-medium uppercase tracking-wider text-primary">
             {sectionLabel}
           </p>
@@ -24,20 +24,19 @@ export const Resume: React.FC = () => {
         </div>
 
         {/* Summary */}
-        <div className="fade-in-up mb-12 lg:mb-16 p-6 bg-background rounded-lg border border-border">
+        <div className="reveal mb-12 lg:mb-16 p-6 bg-background rounded-lg border border-border">
           <p className="text-secondary-text">{resumeData.summary}</p>
         </div>
 
         {/* Experience and Education */}
         <div className="grid gap-10 lg:grid-cols-2">
           {/* Experience */}
-          <div className="space-y-8">
+          <div className="reveal reveal-group space-y-8" data-stagger="90">
             <h3 className="mb-4 text-lg sm:text-xl font-semibold text-main-text">Professional Experience</h3>
             {resumeData.experience.map((exp) => (
               <div
                 key={exp.id}
-                className="card p-4 sm:p-5 lg:p-6 fade-in-up"
-                style={{ animationDelay: `${resumeData.experience.indexOf(exp) * 80}ms` }}
+                className="card p-4 sm:p-5 lg:p-6"
               >
                 <div className="flex items-start gap-4">
                   <div className="flex-shrink-0 h-3 w-3 rounded-full bg-primary" />
@@ -63,13 +62,12 @@ export const Resume: React.FC = () => {
           </div>
 
           {/* Education */}
-          <div className="space-y-8">
+          <div className="reveal reveal-group space-y-8" data-stagger="90">
             <h3 className="mb-4 text-lg sm:text-xl font-semibold text-main-text">Education</h3>
             {resumeData.education.map((edu) => (
               <div
                 key={edu.id}
-                className="card p-4 sm:p-5 lg:p-6 fade-in-up"
-                style={{ animationDelay: `${resumeData.education.indexOf(edu) * 80}ms` }}
+                className="card p-4 sm:p-5 lg:p-6"
               >
                 <div className="flex items-start gap-4">
                   <div className="flex-shrink-0 h-3 w-3 rounded-full bg-primary" />

@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import type { Project } from '@/data/projects';
+import { CaseStudyGallery } from '@/components/ui/CaseStudyGallery';
 
 interface CaseStudyModalProps {
   project: Project;
@@ -29,8 +30,8 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
-      <div role="dialog" aria-modal="true" className="relative bg-background rounded-lg shadow-xl w-full max-w-4xl mx-2 sm:mx-4 h-full max-h-[90vh] overflow-hidden">
+    <div className="modal-backdrop fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
+      <div role="dialog" aria-modal="true" className="modal-panel relative bg-background rounded-lg shadow-xl w-full max-w-4xl mx-2 sm:mx-4 h-full max-h-[90vh] overflow-hidden">
         {/* Close Button */}
         <button
           type="button"
@@ -68,13 +69,13 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
           {/* Case Study Content */}
           <div className="p-4 sm:p-6 lg:p-8 space-y-5 sm:space-y-6 lg:space-y-8">
             {/* Overview Section */}
-            <div className="space-y-3">
+            <div className="reveal space-y-3">
               <h3 className="text-lg sm:text-xl font-semibold text-main-text">Overview</h3>
               <p className="text-sm sm:text-base text-secondary-text leading-relaxed">{project.overview}</p>
             </div>
 
             {/* Problem & Goal — single column on mobile, two columns on lg */}
-            <div className="grid gap-5 sm:gap-6 lg:grid-cols-2">
+            <div className="reveal grid gap-5 sm:gap-6 lg:grid-cols-2">
               <div className="space-y-3">
                 <h3 className="text-lg sm:text-xl font-semibold text-main-text">Problem</h3>
                 <p className="text-sm sm:text-base text-secondary-text leading-relaxed">{project.problem}</p>
@@ -86,30 +87,24 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
             </div>
 
             {/* Solution */}
-            <div className="space-y-3">
+            <div className="reveal space-y-3">
               <h3 className="text-lg sm:text-xl font-semibold text-main-text">Solution</h3>
               <p className="text-sm sm:text-base text-secondary-text leading-relaxed">{project.solution}</p>
             </div>
 
             {/* Screenshots Gallery */}
             {project.screenshots && project.screenshots.length > 0 ? (
-              <div className="space-y-3">
+              <div className="reveal space-y-3">
                 <h3 className="text-lg sm:text-xl font-semibold text-main-text">Screenshots</h3>
-                <div className="grid gap-3 sm:gap-4 grid-cols-1 sm:grid-cols-2">
-                  {project.screenshots.map((src, index) => (
-                    <img
-                      key={index}
-                      src={src}
-                      alt={`${project.title} screenshot ${index + 1}`}
-                      className="w-full h-48 sm:h-56 lg:h-64 object-cover rounded-lg"
-                    />
-                  ))}
-                </div>
+                <CaseStudyGallery
+                  images={[project.image, ...project.screenshots]}
+                  title={project.title}
+                />
               </div>
             ) : null}
 
             {/* Key Features & User Experience */}
-            <div className="grid gap-5 sm:gap-6 lg:grid-cols-2">
+            <div className="reveal grid gap-5 sm:gap-6 lg:grid-cols-2">
               <div className="space-y-3">
                 <h3 className="text-lg sm:text-xl font-semibold text-main-text">Key Features</h3>
                 <div className="space-y-2">
@@ -128,13 +123,13 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
             </div>
 
             {/* Technical Implementation */}
-            <div className="space-y-3">
+            <div className="reveal space-y-3">
               <h3 className="text-lg sm:text-xl font-semibold text-main-text">Technical Implementation</h3>
               <p className="text-sm sm:text-base text-secondary-text leading-relaxed">{project.technicalImplementation}</p>
             </div>
 
             {/* Challenges & Solutions */}
-            <div className="grid gap-5 sm:gap-6 lg:grid-cols-2">
+            <div className="reveal grid gap-5 sm:gap-6 lg:grid-cols-2">
               <div className="space-y-3">
                 <h3 className="text-lg sm:text-xl font-semibold text-main-text">Challenges Faced</h3>
                 <div className="space-y-2">
@@ -160,7 +155,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
             </div>
 
             {/* Technologies Used */}
-            <div className="space-y-3">
+            <div className="reveal space-y-3">
               <h3 className="text-lg sm:text-xl font-semibold text-main-text">Technologies Used</h3>
               <div className="flex flex-wrap gap-2">
                 {project.technologies.map((tech) => (
@@ -172,13 +167,13 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
             </div>
 
             {/* Outcome */}
-            <div className="space-y-3">
+            <div className="reveal space-y-3">
               <h3 className="text-lg sm:text-xl font-semibold text-main-text">Outcome</h3>
               <p className="text-sm sm:text-base text-secondary-text leading-relaxed">{project.outcome}</p>
             </div>
 
             {/* Future Improvements */}
-            <div className="space-y-3">
+            <div className="reveal space-y-3">
               <h3 className="text-lg sm:text-xl font-semibold text-main-text">Future Improvements</h3>
               <div className="space-y-2">
                 {project.futureImprovements.map((improvement, index) => (
@@ -191,7 +186,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
             </div>
 
             {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row sm:gap-3 justify-end pt-4 sm:pt-6">
+            <div className="reveal flex flex-col sm:flex-row sm:gap-3 justify-end pt-4 sm:pt-6">
               {project.liveUrl && (
                 <a
                   href={project.liveUrl}
