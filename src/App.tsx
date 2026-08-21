@@ -10,6 +10,7 @@ import { Resume } from '@/components/sections/Resume'
 import { Testimonials } from '@/components/sections/Testimonials'
 import { Blog } from '@/components/sections/Blog'
 import { Contact } from '@/components/sections/Contact'
+import { GeminiAI } from '@/components/ui/GeminiAI'
 
 const App: React.FC = () => {
   return (
@@ -24,6 +25,7 @@ const App: React.FC = () => {
       <Testimonials />
       <Blog />
       <Contact />
+      <GeminiAI />
     </PortfolioLayout>
   )
 }

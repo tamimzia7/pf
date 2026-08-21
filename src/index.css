@@ -386,3 +386,31 @@ section[id] {
       color 0.25s ease;
   }
 }
+
+/* Gemini AI Assistant */
+@keyframes gemini-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.gemini-spin {
+  animation: gemini-spin 1s linear infinite;
+}
+
+.gemini-chat-panel input:focus {
+  border-color: #16A34A;
+  box-shadow: 0 0 0 2px rgba(22, 163, 74, 0.15);
+}
+
+.gemini-chat-panel::-webkit-scrollbar {
+  width: 4px;
+}
+
+.gemini-chat-panel::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.gemini-chat-panel::-webkit-scrollbar-thumb {
+  background: #D1D5DB;
+  border-radius: 4px;
+}
